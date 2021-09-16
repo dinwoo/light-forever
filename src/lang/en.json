@@ -1,0 +1,11 @@
+{
+  "Meta": {
+    "title": "Light Forever",
+    "description": "",
+    "keyword": ""
+  },
+  "Menu":{
+    "home": "Home",
+    "list": "List"
+  }
+}
