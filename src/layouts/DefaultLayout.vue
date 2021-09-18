@@ -1,7 +1,8 @@
 <template lang="pug">
 .default-wrapper
   Header
-  router-view
+  .default-container
+    router-view
   Footer
 </template>
 
@@ -12,13 +13,13 @@ export default {
   name: "Default",
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {};
   },
   mounted() {},
-  methods: {},
+  methods: {}
 };
 </script>
 
@@ -27,13 +28,11 @@ export default {
 
 .default-wrapper
   width: 100%
-  padding: 0 50px
-  font-size: 20px
-  box-sizing: border-box
+  .default-container
+    width: 100%
   +rwd(768px)
-    font-size: 16px
-    padding: 0 2rem
+    .default-container
 
 article
-  padding-top: 115px
+  padding-top: 82px
 </style>

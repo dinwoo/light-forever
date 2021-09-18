@@ -7,25 +7,43 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    meta: { layout: "HomeLayout" },
-    component: () => import("../views/Home.vue"),
+    meta: { layout: "DefaultLayout" },
+    component: () => import("../views/Home.vue")
   },
   {
-    path: "/card",
-    name: "Card",
+    path: "/about",
+    name: "About",
     meta: { layout: "DefaultLayout" },
-    component: () => import("../views/Card.vue"),
+    component: () => import("../views/About.vue")
   },
   {
-    path: "/cardinfo",
-    name: "CardInfo",
+    path: "/product",
+    name: "Product",
     meta: { layout: "DefaultLayout" },
-    component: () => import("../views/CardInfo.vue"),
+    component: () => import("../views/Product.vue")
   },
+  {
+    path: "/series",
+    name: "Series",
+    meta: { layout: "DefaultLayout" },
+    component: () => import("../views/Series.vue")
+  },
+  {
+    path: "/search",
+    name: "Search",
+    meta: { layout: "DefaultLayout" },
+    component: () => import("../views/Search.vue")
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    meta: { layout: "DefaultLayout" },
+    component: () => import("../views/Contact.vue")
+  }
 ];
 
 const router = new VueRouter({
-  routes,
+  routes
 });
 
 export default router;

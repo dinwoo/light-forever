@@ -1,27 +1,27 @@
 <template lang="pug">
 footer
-  .menu
-    .page-box
-      router-link.page-link(:to="{name:'Home'}") {{$t(`Menu.home`)}}
-      router-link.page-link(:to="{name:'CardList'}") {{$t(`Menu.list`)}}
+  .footer-container
+    router-link.logo(:to="{name:'Home'}")
+      img(src="http://fakeimg.pl/186x163/818181/000000/?text=LOGO")
+    .info-box
+      .title 提供服務
+      p.txt 提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案
+    .info-box
+      .title 公司地址
+      p.txt 新竹市東區林森路203號11-2
+      .title 聯絡資訊
+      p.txt xxxxx@gmail.com
+    .info-box
+      .svg-icon
+      
   .copyright
-    p Copyright © 2021  Daniel Wu
+    p Copyright © 2021 Light forever
 </template>
 
 <script>
 export default {
   name: "Footer",
-  methods: {
-    goMember() {
-      if (localStorage.getItem("account")) {
-        if (this.$route.name == "Member") return;
-        this.$router.push({ name: "Member" });
-      } else {
-        if (this.$route.name == "Signin") return;
-        this.$router.push({ name: "Signin" });
-      }
-    },
-  },
+  methods: {}
 };
 </script>
 
@@ -30,87 +30,56 @@ export default {
 
 footer
   width: 100%
-  padding-top: 50px
-  .menu
-    width: 100%
-    padding: 1rem .8rem
-    box-sizing: border-box
-    display: flex
-    justify-content: space-between
-    align-items: center
-    position: relative
-    &:before,&:after
-      content: ''
-      display: block
-      width: 100%
-      height: 2px
-      background-color: $gray-001
-      position: absolute
-    &:before
-      top: 0
-      left: 0
-    &:after
-      bottom: 0
-      left: 0
-    figure.logo
-      width: 300px
-      line-height: 1
-    .page-box
-      .page-link
-        margin: 0 1.4rem
+  padding: 3rem 2.5rem 2rem
+  background-color: $gray-002
+  box-sizing: border-box
+  .footer-container
+    .logo
+      width: 25%
+      padding-right: 8rem
+      box-sizing: border-box
+      display: inline-block
+      vertical-align: top
+    .info-box
+      width: 25%
+      padding-right: 2rem
+      box-sizing: border-box
+      display: inline-block
+      vertical-align: top
+      .title
+        margin-bottom: 0.6rem
+        font-size: 1.5rem
+        font-weight: 400
+      p.txt
         font-size: 1rem
-        color: $gray-001
-        transition: .3s
-        &.router-link-active
-          color: #ddd
-        +hover
-          color: #ddd
+        & + .title
+          margin-top: 2rem
+      .svg-icon
   .copyright
-    padding: .8rem
-    box-sizing: border-box
-    display: flex
-    justify-content: space-between
+    margin-top: 1.5rem
     p
-      color: $gray-001
-  +rwd(1280px)
-    // padding-top: 50px
-    .menu
-      padding: 1rem .8rem
-      figure.logo
-        width: 200px
-      .page-box
-        .page-link
-          margin: 0 1rem
-      .social-box
-        figure.icon
-          width: 25px
-    .copyright
-      padding: .8rem
-  +rwd(1080px)
-    // padding-top: 50px
-    .menu
-      padding: 1rem 0rem
-      figure.logo
-        width: 160px
-      .page-box
-        .page-link
-          margin: 0 .3rem
-          font-size: 0.7em
-      .social-box
-        figure.icon
-          width: 20px
-          margin: 0 5px
-    .copyright
-      padding: .8rem
+      font-size: 1rem
   +rwd(768px)
-    // padding-top: 50px
-    .menu
-      display: none
+    padding: 2rem 2.5rem
+    .footer-container
+      .logo
+        width: 50%
+        margin-bottom: 1rem
+        padding-right: 2rem
+      .info-box
+        width: 50%
+        margin-bottom: 1rem
+        padding-right: 1rem
+        .title
+          margin-bottom: 0.6rem
+          font-size: 1.2rem
+        p.txt
+          font-size: .8rem
+          & + .title
+            margin-top: 1rem
+        .svg-icon
     .copyright
-      padding: .8rem
-      display: block
-      text-align: center
+      margin-top: 1rem
       p
-        font-size: 0.75rem
-        color: $gray-001
+        font-size: .75rem
 </style>

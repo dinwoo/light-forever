@@ -4,8 +4,7 @@
     v-for="card in cardData" :key="card.id"
     :to="{name:routeName,params:{id:card.id}}"
   )
-    .date {{card.dateTime}}
-    .card-pic(:style="`background-image: url('${card.img}')`")
+    .card-pic(:style="`background-image: url('${card.picture}')`")
     .card-title {{card.title}}
     .card-description {{card.description}}
 
@@ -17,7 +16,7 @@ export default {
   components: {},
   props: {
     cardData: Array,
-    routeName: String,
+    routeName: String
   },
   data() {
     return {};
@@ -25,7 +24,7 @@ export default {
   watch: {},
   mounted() {},
   computed: {},
-  methods: {},
+  methods: {}
 };
 </script>
 
@@ -37,42 +36,23 @@ export default {
   justify-content: space-between
   flex-wrap: wrap
   .card-item
-    width: 46%
+    width: calc(33.333333% - 60px)
     margin-bottom: 2rem
     display: block
-    .date
-      margin-bottom: 1rem
-      font-size: 1.4rem
-      color: $gray-001
     .card-pic
-      // background-image: url('../assets/images/news-example.jpg')
       width: 100%
-      padding-bottom: 63.701923%
-      border-radius: 10px
+      padding-bottom: 100%
       background-size: cover
       background-position: center center
       background-repeat: no-repeat
       position: relative
-      +before
-        width: 100%
-        height: 100%
-        border-radius: 10px
-        background-color: rgba(#000,.2)
-        transition: .3s
-        position: absolute
-        top: 0
-        left: 0
-      +hover
-        &:before
-          background-color: rgba(#000,0)
     .card-title
-      margin: 1.2rem 0
-      font-size: 1.4rem
-      color: $gray-001
+      margin: 0.2rem 0
+      font-size: 1.2rem
+      text-align: center
     .card-description
-      font-size: 1rem
+      font-size: 1.2rem
       line-height: 1.5
-      color: $gray-001
       display: -webkit-box
       -webkit-line-clamp: 2
       -webkit-box-orient: vertical
@@ -81,7 +61,6 @@ export default {
   +rwd(768px)
     .card-item
       width: 100%
-      .date
       .card-pic
       .card-title
       .card-description

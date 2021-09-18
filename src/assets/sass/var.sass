@@ -30,12 +30,6 @@
 		display: block
 		clear: both
 
-=wrapperStyle
-	max-width: 1370px
-	margin: auto
-	padding: 0 20px
-	box-sizing: border-box
-
 =keyframes($name)
 	@-webkit-keyframes #{$name}
 		@content
@@ -50,12 +44,6 @@
 	-moz-animation: $content
 	-o-animation: $content
 	animation: $content
-
-=titleStyle
-	font-size: 48px
-	color: $blue
-	text-align: center
-	margin-bottom: 40px
 
 =before($txt:'')
 	&:before
@@ -88,16 +76,20 @@
 	left: $l
 	transform: translate(-50%,-50%)
 
-=fontP
-	font-size: 21px
-	color: $gray
-	line-height: 1.5
-	font-weight: normal
-	+rwd(768px)
-		font-size: 16px
-
 =dib
 	display: inline-block
 	vertical-align: middle
 
-$gray-001: #999
+=btnStyle
+	display: inline-block
+	padding: 0.25rem 1rem
+	background-color: $gray-002
+	color: #000
+	transition: .3s
+	cursor: pointer
+	+hover
+		color: #444
+		background-color: $gray-001
+
+$gray-001: #eaeaea
+$gray-002: #c4c4c4
