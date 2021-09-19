@@ -111,4 +111,15 @@ article.series
         width: 360px
         margin-left: auto
         margin-bottom: 3rem
+  +rwd(768px)
+    section.main
+      .wrapper
+        h2.title
+          text-align: center
+          // margin: 1rem 0
+        p.info
+          // margin-bottom: 2rem
+        .search-box
+          // width: 360px
+          margin: 0 auto 3rem
 </style>

@@ -106,4 +106,14 @@ article.product
         position: absolute
         top: 0
         right: 0
+  +rwd(768px)
+    section.main
+      .wrapper
+        position: relative
+        h2.title
+          margin-bottom: 1.5rem
+          text-align: center
+        .search-box
+          margin: 0 auto 3rem
+          position: relative
 </style>

@@ -97,4 +97,25 @@ article.contact
         margin: 2rem auto
         box-sizing: border-box
         text-align: center
+  +rwd(768px)
+    section.main
+      .wrapper
+        h2.title
+          margin-bottom: 1.5rem
+        p.description
+          margin-bottom: 2rem
+        .form-box
+          padding: 25px 30px
+          .row
+            & + .row
+              // margin-top: 0.8rem
+            label
+              .field-title
+              input,textarea
+              input
+              textarea
+                height: 160px
+        .btn
+          width: 180px
+          // margin: 2rem auto
 </style>
