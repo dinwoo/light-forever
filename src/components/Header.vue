@@ -3,7 +3,7 @@ header
   router-link.logo(:to="{name:'Home'}")
     img(src="http://fakeimg.pl/186x46/c4c4c4/000000/?text=LOGO")
   .menu-box
-    .page-box
+    .page-box(v-show="!isMobile||(isMobile&&showMenu)")
       router-link.page-link(:to="{name:'About'}") 關於我們
       router-link.page-link(:to="{name:'Product'}") 產品展示
       router-link.page-link(:to="{name:'Contact'}") 聯絡我們
@@ -12,7 +12,7 @@ header
     router-link.member-link(:to="{name:'Member'}")
       .svg-box
         include ../assets/pug/member.pug
-    .ham
+    .ham(@click="showMenu=!showMenu")
     
   
 </template>
@@ -41,7 +41,9 @@ export default {
     });
   },
   mounted() {
-    this.$nextTick(() => {});
+    this.$nextTick(() => {
+      this.isMobile = this.screenWidth < 768;
+    });
   },
   methods: {
     // 儲存切換的語系
@@ -76,7 +78,18 @@ export default {
       });
     }
   },
-  watch: {}
+  watch: {
+    screenWidth(val) {
+      if (!this.timer) {
+        this.isMobile = val < 768;
+        this.timer = true;
+        setTimeout(() => {
+          // console.log(val);
+          this.timer = false;
+        }, 400);
+      }
+    }
+  }
 };
 </script>
 
@@ -120,6 +133,7 @@ header
     .logo
       width: 120px
     .menu-box
+      padding-left: 20px
       .page-box
         width: 100px
         background-color: #fff
@@ -137,9 +151,9 @@ header
           & + .page-link
             border-top: 1px solid $gray-002
       .search-box
-        // width: 80px
+        width: calc( 100% - 90px )
         // margin: 0 0.4rem
-        display: none
+        // display: none
       .member-link
         width: 30px
         margin: 0

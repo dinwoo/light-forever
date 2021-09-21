@@ -114,6 +114,7 @@ article.product
           margin-bottom: 1.5rem
           text-align: center
         .search-box
+          width: 80%
           margin: 0 auto 3rem
           position: relative
 </style>

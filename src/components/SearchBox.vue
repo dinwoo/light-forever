@@ -17,7 +17,7 @@ export default {
 .search-box-wrapper
   width: 100%
   input
-    width: 180px
+    width: calc(100% - 22px)
     font-size: 0.8rem
     border: 1px solid $gray-002
     line-height: 28px

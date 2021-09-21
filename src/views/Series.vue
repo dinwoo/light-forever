@@ -120,6 +120,7 @@ article.series
         p.info
           // margin-bottom: 2rem
         .search-box
+          width: 80%
           // width: 360px
           margin: 0 auto 3rem
 </style>

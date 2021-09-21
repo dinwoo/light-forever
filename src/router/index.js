@@ -29,6 +29,12 @@ const routes = [
     component: () => import("../views/Series.vue")
   },
   {
+    path: "/productInfo",
+    name: "ProductInfo",
+    meta: { layout: "DefaultLayout" },
+    component: () => import("../views/ProductInfo.vue")
+  },
+  {
     path: "/search",
     name: "Search",
     meta: { layout: "DefaultLayout" },
@@ -39,6 +45,50 @@ const routes = [
     name: "Contact",
     meta: { layout: "DefaultLayout" },
     component: () => import("../views/Contact.vue")
+  },
+  {
+    path: "/member",
+    name: "MemberLayout",
+    component: () => import("@/views/member/Member.vue"),
+    redirect: "/member/info",
+    children: [
+      {
+        path: "signup",
+        name: "Signup",
+        meta: { layout: "DefaultLayout" },
+        component: () => import("@/views/member/Signup.vue")
+      },
+      {
+        path: "validation",
+        name: "Validation",
+        meta: { layout: "DefaultLayout" },
+        component: () => import("@/views/member/Validation.vue")
+      },
+      {
+        path: "info",
+        name: "Member",
+        meta: { layout: "DefaultLayout" },
+        component: () => import("@/views/member/MemberInfo.vue")
+      },
+      {
+        path: "signin",
+        name: "Signin",
+        meta: { layout: "DefaultLayout" },
+        component: () => import("@/views/member/Signin.vue")
+      },
+      {
+        path: "forgetPassword",
+        name: "ForgetPassword",
+        meta: { layout: "DefaultLayout" },
+        component: () => import("@/views/member/ForgetPassword.vue")
+      },
+      {
+        path: "passwordEdit",
+        name: "PasswordEdit",
+        meta: { layout: "DefaultLayout" },
+        component: () => import("@/views/member/PasswordEdit.vue")
+      }
+    ]
   }
 ];
 
