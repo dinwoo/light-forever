@@ -2,7 +2,7 @@
 footer
   .footer-container
     router-link.logo(:to="{name:'Home'}")
-      img(src="http://fakeimg.pl/186x163/818181/000000/?text=LOGO")
+      img(src="http://fakeimg.pl/186x163/eee/000000/?text=LOGO")
     .info-box
       .title 提供服務
       p.txt 提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案

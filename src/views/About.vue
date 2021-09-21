@@ -20,27 +20,27 @@ export default {
   data() {
     return {
       banner: {
-        pc: ["http://fakeimg.pl/1440x800/818181/000000/?text=AboutBanner"],
-        mobile: ["http://fakeimg.pl/711x1151/818181/000000/?text=AboutBanner"]
+        pc: ["http://fakeimg.pl/1440x800/eee/000000/?text=AboutBanner"],
+        mobile: ["http://fakeimg.pl/711x1151/eee/000000/?text=AboutBanner"]
       },
       listData: [
         {
           title: "公司簡介標題",
           description:
             "文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容",
-          picture: "http://fakeimg.pl/350x350/818181/000000/?text=PIC"
+          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PIC"
         },
         {
           title: "公司簡介標題",
           description:
             "文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容",
-          picture: "http://fakeimg.pl/350x350/818181/000000/?text=PIC"
+          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PIC"
         },
         {
           title: "公司簡介標題",
           description:
             "文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容文案內容",
-          picture: "http://fakeimg.pl/350x350/818181/000000/?text=PIC"
+          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PIC"
         }
       ]
     };

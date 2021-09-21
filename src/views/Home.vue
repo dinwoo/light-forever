@@ -40,16 +40,16 @@ export default {
     return {
       banner: {
         pc: [
-          "http://fakeimg.pl/1440x800/818181/000000/?text=HomeBanner1",
-          "http://fakeimg.pl/1440x800/818181/000000/?text=HomeBanner2"
+          "http://fakeimg.pl/1440x800/eee/000000/?text=HomeBanner1",
+          "http://fakeimg.pl/1440x800/eee/000000/?text=HomeBanner2"
         ],
         mobile: [
-          "http://fakeimg.pl/711x1151/818181/000000/?text=HomeBanner1",
-          "http://fakeimg.pl/711x1151/818181/000000/?text=HomeBanner2"
+          "http://fakeimg.pl/711x1151/eee/000000/?text=HomeBanner1",
+          "http://fakeimg.pl/711x1151/eee/000000/?text=HomeBanner2"
         ]
       },
       product: {
-        pic: "http://fakeimg.pl/350x350/818181/000000/?text=PRODUCT"
+        pic: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
       }
     };
   },

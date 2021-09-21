@@ -38,8 +38,8 @@ export default {
   data() {
     return {
       banner: {
-        pc: ["http://fakeimg.pl/1440x447/818181/000000/?text=ContactBanner"],
-        mobile: ["http://fakeimg.pl/186x163/818181/000000/?text=ContactBanner"]
+        pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=ContactBanner"],
+        mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ContactBanner"]
       }
     };
   },

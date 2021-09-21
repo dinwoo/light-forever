@@ -8,18 +8,18 @@ article.product-info-wrapper
         .breadcrumb-item 產品系列
         .breadcrumb-item 產品系列名稱
       .product-info
-        img.product-pic(src="http://fakeimg.pl/360x360/818181/000000/?text=product")
+        img.product-pic(src="http://fakeimg.pl/360x360/eee/000000/?text=product")
         .info-box
           h2.title 產品名稱
           p.description 產品說明產品說明產品說明產品說明產品說明產品說明
       .produvt-introduce
         h2.introduce-title 產品介紹
         p.introduce-description 產品說明產品說明產品說明產品說明產品說明產品說明
-        img.introduce-pic(src="http://fakeimg.pl/680x680/818181/000000/?text=product")
+        img.introduce-pic(src="http://fakeimg.pl/680x680/eee/000000/?text=product")
       .produvt-introduce
         h2.introduce-title 產品介紹
         p.introduce-description 產品說明產品說明產品說明產品說明產品說明產品說明
-        img.introduce-pic(src="http://fakeimg.pl/680x680/818181/000000/?text=product")
+        img.introduce-pic(src="http://fakeimg.pl/680x680/eee/000000/?text=product")
 </template>
 
 <script>
@@ -34,8 +34,8 @@ export default {
   data() {
     return {
       banner: {
-        pc: ["http://fakeimg.pl/1440x447/818181/000000/?text=ProductBanner"],
-        mobile: ["http://fakeimg.pl/186x163/818181/000000/?text=ProductBanner"]
+        pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=ProductBanner"],
+        mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ProductBanner"]
       }
     };
   },
