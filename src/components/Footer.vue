@@ -31,7 +31,7 @@ export default {
 footer
   width: 100%
   padding: 3rem 2.5rem 2rem
-  background-color: $gray-002
+  background-color: $brown-003
   box-sizing: border-box
   .footer-container
     .logo

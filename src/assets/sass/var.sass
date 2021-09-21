@@ -1,3 +1,12 @@
+
+$gray-001: #eaeaea
+$gray-002: #c4c4c4
+
+$brown-001: #f7f1f0
+$brown-002: #c3a6a0
+$brown-003: #a15c38
+$black-001: #262220
+
 =rwd($w)
 	@media only screen and (max-width: $w)
 		@content
@@ -83,13 +92,10 @@
 =btnStyle
 	display: inline-block
 	padding: 0.25rem 1rem
-	background-color: $gray-002
+	background-color: $brown-003
 	color: #000
 	transition: .3s
 	cursor: pointer
 	+hover
 		color: #444
-		background-color: $gray-001
-
-$gray-001: #eaeaea
-$gray-002: #c4c4c4
+		background-color: $brown-002

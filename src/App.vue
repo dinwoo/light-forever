@@ -69,6 +69,7 @@ export default {
 *
   padding: 0
   margin: 0
+  color: $black-001
   font-family: 'Noto Sans TC', serif
 
 img

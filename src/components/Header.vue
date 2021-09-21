@@ -99,7 +99,8 @@ export default {
 header
   width: 100%
   padding: 18px
-  background-color: $gray-001
+  background-color: $brown-001
+  box-shadow: 0 0 5px #ddd
   box-sizing: border-box
   display: flex
   justify-content: space-between
@@ -118,6 +119,10 @@ header
         font-size: 0.8rem
         font-weight: 400
         margin: 0 0.8rem
+        color: $black-001
+        transition: .3s
+        +hover
+          color: $brown-003
     .search-box
       margin: 0 0.4rem
       +dib
@@ -128,6 +133,10 @@ header
       +dib
       .svg-box
         line-height: 1
+        fill: $black-001
+        transition: .3s
+        +hover
+          fill: $brown-003
   +rwd(768px)
     // padding: 18px
     .logo
@@ -137,7 +146,7 @@ header
       .page-box
         width: 100px
         background-color: #fff
-        border: 1px solid $gray-002
+        border: 1px solid $brown-002
         position: absolute
         right: 0
         bottom: 0
@@ -149,7 +158,7 @@ header
           padding: .5rem 0
           display: block
           & + .page-link
-            border-top: 1px solid $gray-002
+            border-top: 1px solid $brown-002
       .search-box
         width: calc( 100% - 90px )
         // margin: 0 0.4rem
