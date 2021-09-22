@@ -17,6 +17,13 @@ import "./plugins/axios";
 // mock
 import "./fake-db/index.js";
 
+// fortawesome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+library.add(faUserSecret);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
 Vue.use(VueMeta);
 
 Vue.use(VueI18n);
@@ -40,15 +47,15 @@ const i18n = new VueI18n({
   locale: locale,
   messages: {
     ch,
-    en,
-  },
+    en
+  }
 });
 
 Vue.use(VueScrollmagic, {
   verical: true,
   globalSceneOptions: {},
   loglevel: 2,
-  refreshInterval: 100,
+  refreshInterval: 100
 });
 
 Vue.config.productionTip = false;
@@ -57,5 +64,5 @@ new Vue({
   router,
   store,
   i18n,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount("#app");

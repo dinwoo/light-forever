@@ -2,6 +2,7 @@
 .search-box-wrapper
   input
   .search-icon
+    font-awesome-icon(:icon="['fas','fa-search']")
 </template>
 
 <script>
