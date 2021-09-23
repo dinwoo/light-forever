@@ -5,23 +5,31 @@
     .row
       label
         .field-title 姓名
-        input(type="text")
+        input(type="text" v-model="name")
     .row
       label
         .field-title 電話
-        input(type="phone")
+        input(type="phone" v-model="phone")
+    .row
+      label
+        .field-title 公司
+        input(type="text" v-model="company")
+    .row
+      label
+        .field-title 職稱
+        input(type="text" v-model="companyTitle")
     .row
       label
         .field-title 帳號
-        input(type="text" placeholder="使用email註冊會員")
+        input(type="text" placeholder="使用email註冊會員" v-model="account")
     .row
       label
         .field-title 密碼
-        input(type="password")
+        input(type="password" v-model="password")
     .row
       label
         .field-title 密碼確認
-        input(type="password")
+        input(type="password" v-model="confirmPassword")
   .btn 註冊
       
 </template>
@@ -35,7 +43,15 @@ export default {
   props: {},
   mixins: [],
   data() {
-    return {};
+    return {
+      name: "",
+      phone: "",
+      account: "",
+      company: "",
+      companyTitle: "",
+      password: "",
+      confirmPassword: ""
+    };
   },
   computed: {
     ...mapState(["isLoading"])
@@ -43,7 +59,25 @@ export default {
   created() {},
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["postSignup"]),
+    postSignupHandler() {
+      this.postSignup({
+        name: this.name,
+        phone: this.phone,
+        company: this.company,
+        companyTitle: this.companyTitle,
+        account: this.account,
+        password: this.password,
+        confirmPassword: this.confirmPassword
+      })
+        .then(() => {
+          // localStorage.setItem("account", this.account);
+          this.$router.push({ name: "Validation" });
+        })
+        .catch(() => {
+          alert("傳送失敗");
+        });
+    }
   },
   watch: {}
 };

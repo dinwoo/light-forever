@@ -8,7 +8,7 @@ function resolve(dir) {
 
 module.exports = {
   runtimeCompiler: true,
-  publicPath: "/light-forever/",
+  publicPath: "/",
   devServer: {
     /* https option */
     // open: process.platform === 'darwin',
@@ -17,10 +17,10 @@ module.exports = {
     // https: true,
     // hotOnly: false,
   },
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
       .set("@assets", resolve("src/assets"))
       .set("@components", resolve("src/components"));
-  },
+  }
 };

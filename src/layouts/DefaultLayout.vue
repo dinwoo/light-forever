@@ -30,7 +30,6 @@ export default {
   width: 100%
   .default-container
     width: 100%
-    background-color: $brown-001
   +rwd(768px)
     .default-container
 

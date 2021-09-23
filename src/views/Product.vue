@@ -77,16 +77,32 @@ export default {
             "description description description description description",
           picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
         }
-      ]
+      ],
+      pageSize: 10
     };
   },
   computed: {
-    ...mapState(["isLoading"])
+    ...mapState(["isLoading", "product"])
   },
-  created() {},
+  created() {
+    this.getCategoryApi();
+  },
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["getCategoryList"]),
+    getCategoryApi() {
+      this.getCategoryList({
+        select: null,
+        pageSize: this.pageSize,
+        currentPage: 1
+      })
+        .then(() => {
+          console.log("success");
+        })
+        .catch(() => {
+          console.log("fail");
+        });
+    }
   },
   watch: {}
 };

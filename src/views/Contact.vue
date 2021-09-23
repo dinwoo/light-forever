@@ -10,20 +10,20 @@ article.contact
         .row
           label
             .field-title 姓名
-            input(type="text")
+            input(type="text" v-model="name")
         .row
           label
             .field-title 電話
-            input(type="text")
+            input(type="phone" v-model="phone")
         .row
           label
             .field-title Email
-            input(type="text")
+            input(type="text" v-model="email")
         .row
           label
             .field-title 內容
-            textarea
-      .btn 送出
+            textarea(v-model="content")
+      .btn(@click="postEmailHandler") 送出
 </template>
 
 <script>
@@ -40,7 +40,11 @@ export default {
       banner: {
         pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=ContactBanner"],
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ContactBanner"]
-      }
+      },
+      name: "",
+      phone: "",
+      email: "",
+      content: ""
     };
   },
   computed: {
@@ -49,7 +53,25 @@ export default {
   created() {},
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["postEmail"]),
+    postEmailHandler() {
+      this.postEmail({
+        name: this.name,
+        phone: this.phone,
+        email: this.email,
+        content: this.content
+      })
+        .then(() => {
+          alert("傳送成功");
+          this.name = "";
+          this.phone = "";
+          this.email = "";
+          this.content = "";
+        })
+        .catch(() => {
+          alert("傳送失敗");
+        });
+    }
   },
   watch: {}
 };

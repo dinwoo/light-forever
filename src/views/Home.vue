@@ -1,7 +1,7 @@
 <template lang="pug">
 article.home
   section.banner
-    BannerSwiper(:pictureLink="banner")
+    BannerSwiper(:pictureLink="home.banner")
   section.main
     .wrapper
       h2 公司、產品、企業精神文案標題（或是slogan）
@@ -54,12 +54,23 @@ export default {
     };
   },
   computed: {
-    ...mapState(["isLoading"])
+    ...mapState(["isLoading", "home"])
   },
-  created() {},
+  created() {
+    this.getBannerApi();
+  },
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["getBanner"]),
+    getBannerApi() {
+      this.getBanner({})
+        .then(() => {
+          console.log("success");
+        })
+        .catch(() => {
+          console.log("fail");
+        });
+    }
   },
   watch: {}
 };

@@ -133,6 +133,9 @@ ul.paginate-box
 <style lang="sass" scoped>
 @import "@/assets/sass/var.sass"
 
+#app
+  background-color: $brown-001
+
 .loading-mask
   width: 100%
   height: 100%
