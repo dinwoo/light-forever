@@ -12,7 +12,14 @@ footer
       .title 聯絡資訊
       p.txt xxxxx@gmail.com
     .info-box
-      .svg-icon
+      a.svg-icon(href="" target="_blank")
+        font-awesome-icon(:icon="['fab','instagram-square']")
+      a.svg-icon(href="" target="_blank")
+        font-awesome-icon(:icon="['fab','line']")
+      a.svg-icon(href="" target="_blank")
+        font-awesome-icon(:icon="['fab','facebook-square']")
+      a.svg-icon(href="" target="_blank")
+        font-awesome-icon(:icon="['fab','youtube-square']")
       
   .copyright
     p Copyright © 2021 Light forever
@@ -55,6 +62,23 @@ footer
         & + .title
           margin-top: 2rem
       .svg-icon
+        width: 25%
+        padding: 5px
+        box-sizing: border-box
+        cursor: pointer
+        +dib
+        svg
+          width: 100%
+          height: 100%
+          vertical-align: middle
+          path
+            color: $black-001
+            transition: .3s
+        +hover
+          svg
+            path
+              color: $brown-002
+
   .copyright
     margin-top: 1.5rem
     p
@@ -78,6 +102,7 @@ footer
           & + .title
             margin-top: 1rem
         .svg-icon
+          width: 50%
     .copyright
       margin-top: 1rem
       p
