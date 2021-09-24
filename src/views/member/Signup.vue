@@ -30,7 +30,7 @@
       label
         .field-title 密碼確認
         input(type="password" v-model="confirmPassword")
-  .btn 註冊
+  .btn(@click="postSignupHandler") 註冊
       
 </template>
 
@@ -71,7 +71,7 @@ export default {
         confirmPassword: this.confirmPassword
       })
         .then(() => {
-          // localStorage.setItem("account", this.account);
+          localStorage.setItem("account", this.account);
           this.$router.push({ name: "Validation" });
         })
         .catch(() => {

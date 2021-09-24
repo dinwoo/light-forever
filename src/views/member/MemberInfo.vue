@@ -1,32 +1,35 @@
 <template lang="pug">
-.member-info-wrapper
+.member-info-wrapper(v-if="!isLoading")
   h2.title 會員資料
   .form-box
     .row
       label
         .field-title 姓名
-        p.field-info(v-if="!isEdit") 姓名
-        input(type="text" v-else)
+        p.field-info(v-if="!isEdit") {{member.name}}
+        input(v-else type="text" v-model="member.name")
     .row
       label
         .field-title 電話
-        p.field-info(v-if="!isEdit") 0987654321
-        input(type="phone" v-else)
+        p.field-info(v-if="!isEdit") {{member.phone}}
+        input(v-else type="phone" v-model="member.phone")
+    .row
+      label
+        .field-title 公司
+        p.field-info(v-if="!isEdit") {{member.company}}
+        input(v-else type="text" v-model="member.company")
+    .row
+      label
+        .field-title 職稱
+        p.field-info(v-if="!isEdit") {{member.companyTitle}}
+        input(v-else type="text" v-model="member.companyTitle")
     .row
       label
         .field-title 帳號
-        p.field-info test@gmail.com
-    .row
-      label
-        .field-title 密碼
-        p.field-info(v-if="!isEdit") **********
-        input(type="password" v-else)
-    .row(v-if="isEdit")
-      label
-        .field-title 確認密碼
-        input(type="password")
+        p.field-info {{member.account}}
   .btn(v-if="!isEdit" @click="isEdit=!isEdit") 修改資料
-  .btn(v-else) 確認資料
+  .btn(v-else @click="putMemberInfoApi") 確認修改
+  router-link.btn(v-if="!isEdit" :to="{name:'ForgetPassword'}") 修改密碼
+  .btn(v-if="!isEdit" @click="logoutHandler") 登出
 </template>
 
 <script>
@@ -43,12 +46,48 @@ export default {
     };
   },
   computed: {
-    ...mapState(["isLoading"])
+    ...mapState(["isLoading", "member"])
   },
-  created() {},
+  created() {
+    const account = localStorage.getItem("account");
+    if (!account) {
+      this.$router.push({ name: "Signin" });
+    } else {
+      this.getMemberInfo(account)
+        .then(res => {
+          console.log(res);
+          localStorage.setItem("token", res.data.token);
+          this.isEdit = false;
+        })
+        .catch(() => {
+          console.log("fail");
+        });
+    }
+  },
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["getMemberInfo", "putMemberInfo"]),
+    putMemberInfoApi() {
+      this.putMemberInfo({
+        token: localStorage.getItem("token"),
+        name: this.member.name,
+        phone: this.member.phone,
+        company: this.member.company,
+        companyTitle: this.member.companyTitle
+      })
+        .then(() => {
+          console.log("success");
+          this.isEdit = false;
+        })
+        .catch(() => {
+          console.log("fail");
+        });
+    },
+    logoutHandler() {
+      localStorage.removeItem("account");
+      localStorage.removeItem("token");
+      this.$router.push({ name: "Signin" });
+    }
   },
   watch: {}
 };

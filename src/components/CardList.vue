@@ -4,8 +4,8 @@
     v-for="card in cardData" :key="card.id"
     :to="{name:routeName,params:{id:card.id}}"
   )
-    .card-pic(:style="`background-image: url('${card.picture}')`")
-    .card-title {{card.title}}
+    .card-pic(:style="`background-image: url('${card.img}')`")
+    .card-title {{card.name}}
     .card-description {{card.description}}
 
 </template>

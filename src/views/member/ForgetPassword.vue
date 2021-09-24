@@ -5,8 +5,8 @@
     .row
       label
         .field-title 帳號
-        input(type="text")
-  .btn 送出
+        input(type="text" v-model="account")
+  .btn(@click="postPasswordTokenHandler") 送出
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
   props: {},
   mixins: [],
   data() {
-    return {};
+    return { account: "" };
   },
   computed: {
     ...mapState(["isLoading"])
@@ -26,7 +26,16 @@ export default {
   created() {},
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["postPasswordToken"]),
+    postPasswordTokenHandler() {
+      this.postPasswordToken(this.account)
+        .then(() => {
+          this.$router.push({ name: "PasswordEdit" });
+        })
+        .catch(() => {
+          alert("傳送失敗");
+        });
+    }
   },
   watch: {}
 };

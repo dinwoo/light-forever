@@ -5,16 +5,16 @@
     .row
       label
         .field-title 驗證碼
-        input(type="text")
+        input(type="text" v-model="token")
     .row
       label
         .field-title 密碼
-        input(type="password")
+        input(type="password" v-model="password")
     .row
       label
         .field-title 密碼確認
-        input(type="password")
-  .btn 確認修改
+        input(type="password" v-model="confirmPassword")
+  .btn(@click="putPasswordInfoHandler") 確認修改
 </template>
 
 <script>
@@ -26,15 +26,41 @@ export default {
   props: {},
   mixins: [],
   data() {
-    return {};
+    return {
+      token: "",
+      password: "",
+      confirmPassword: ""
+    };
   },
   computed: {
     ...mapState(["isLoading"])
   },
   created() {},
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      if (this.$route.query.t) {
+        this.token = this.getUrlToken();
+      }
+    });
+  },
   methods: {
-    ...mapActions([""])
+    ...mapActions(["putPasswordInfo"]),
+    putPasswordInfoHandler() {
+      this.putPasswordInfo({
+        token: this.token,
+        password: this.password,
+        confirmPassword: this.confirmPassword
+      })
+        .then(() => {
+          alert("修改成功");
+          localStorage.removeItem("account");
+          localStorage.removeItem("token");
+          this.$router.push({ name: "Signin" });
+        })
+        .catch(() => {
+          alert("傳送失敗");
+        });
+    }
   },
   watch: {}
 };

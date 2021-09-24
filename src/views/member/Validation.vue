@@ -5,8 +5,8 @@
     .row
       label
         .field-title 驗證碼
-        input(type="text")
-  .btn 送出
+        input(type="text" v-model="token")
+  .btn(@click="postValidationHandler") 送出
 </template>
 
 <script>
@@ -18,15 +18,31 @@ export default {
   props: {},
   mixins: [],
   data() {
-    return {};
+    return { token: "" };
   },
   computed: {
     ...mapState(["isLoading"])
   },
   created() {},
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      if (this.$route.query.t) {
+        this.token = this.getUrlToken();
+        this.postValidationHandler();
+      }
+    });
+  },
   methods: {
-    ...mapActions([""])
+    ...mapActions(["postValidation"]),
+    postValidationHandler() {
+      this.postValidation(this.token)
+        .then(() => {
+          this.$router.push({ name: "Member" });
+        })
+        .catch(() => {
+          alert("傳送失敗");
+        });
+    }
   },
   watch: {}
 };

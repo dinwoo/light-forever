@@ -6,20 +6,13 @@ article.product-info-wrapper
     .wrapper
       .breadcrumb
         .breadcrumb-item 產品系列
-        .breadcrumb-item 產品系列名稱
+        router-link.breadcrumb-item(:to="{name:'Series', params:{id:product.detail.categoryId}}") {{product.detail.categoryName}}
       .product-info
-        img.product-pic(src="http://fakeimg.pl/360x360/eee/000000/?text=product")
+        img.product-pic(:src="product.detail.img")
         .info-box
-          h2.title 產品名稱
-          p.description 產品說明產品說明產品說明產品說明產品說明產品說明
-      .produvt-introduce
-        h2.introduce-title 產品介紹
-        p.introduce-description 產品說明產品說明產品說明產品說明產品說明產品說明
-        img.introduce-pic(src="http://fakeimg.pl/680x680/eee/000000/?text=product")
-      .produvt-introduce
-        h2.introduce-title 產品介紹
-        p.introduce-description 產品說明產品說明產品說明產品說明產品說明產品說明
-        img.introduce-pic(src="http://fakeimg.pl/680x680/eee/000000/?text=product")
+          h2.title {{product.detail.name}}
+          p.description {{product.detail.description}}
+      .produvt-introduce(v-html="product.detail.infos")
 </template>
 
 <script>
@@ -40,12 +33,25 @@ export default {
     };
   },
   computed: {
-    ...mapState(["isLoading"])
+    ...mapState(["isLoading", "product"])
   },
-  created() {},
+  created() {
+    this.getProductApi();
+  },
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["getProductDetail"]),
+    getProductApi() {
+      this.getProductDetail({
+        id: parseInt(this.$route.params.id)
+      })
+        .then(() => {
+          console.log("success");
+        })
+        .catch(() => {
+          console.log("fail");
+        });
+    }
   },
   watch: {}
 };

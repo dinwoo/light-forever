@@ -1,14 +1,24 @@
 <template lang="pug">
 .search-box-wrapper
-  input
-  .search-icon
+  input(type="text" v-model="txt")
+  .search-icon(@click="$emit('searchHandler',txt)")
     font-awesome-icon(:icon="['fas','search']")
 </template>
 
 <script>
 export default {
   name: "SearchBox",
-  methods: {}
+  props: {
+    searchTxt: String
+  },
+  data() {
+    return { txt: "" };
+  },
+  watch: {
+    searchTxt(val) {
+      this.txt = val;
+    }
+  }
 };
 </script>
 

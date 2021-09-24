@@ -20,19 +20,19 @@ const routes = [
   {
     path: "/product",
     name: "Product",
-    meta: { title: "產品展示", layout: "DefaultLayout" },
+    meta: { title: "產品種類列表", layout: "DefaultLayout" },
     component: () => import("../views/Product.vue")
   },
   {
-    path: "/series",
+    path: "/category/:id",
     name: "Series",
-    meta: { title: "產品系列", layout: "DefaultLayout" },
+    meta: { title: "產品列表", layout: "DefaultLayout" },
     component: () => import("../views/Series.vue")
   },
   {
-    path: "/productInfo",
+    path: "/productInfo/:id",
     name: "ProductInfo",
-    meta: { title: "產品介紹", layout: "DefaultLayout" },
+    meta: { title: "產品列表", layout: "DefaultLayout" },
     component: () => import("../views/ProductInfo.vue")
   },
   {

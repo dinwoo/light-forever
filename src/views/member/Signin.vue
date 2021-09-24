@@ -5,14 +5,14 @@
     .row
       label
         .field-title 帳號
-        input(type="text")
+        input(type="text" v-model="account")
     .row
       label
         .field-title 密碼
-        input(type="password")
+        input(type="password" v-model="password")
     .row
       .forget-btn 忘記密碼？
-  .btn 登入
+  .btn(@click="postSigninHandler") 登入
 </template>
 
 <script>
@@ -24,7 +24,10 @@ export default {
   props: {},
   mixins: [],
   data() {
-    return {};
+    return {
+      account: "",
+      password: ""
+    };
   },
   computed: {
     ...mapState(["isLoading"])
@@ -32,7 +35,22 @@ export default {
   created() {},
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["postSignin"]),
+    postSigninHandler() {
+      this.postSignin({
+        account: this.account,
+        password: this.password
+      })
+        .then(res => {
+          console.log(res);
+          localStorage.setItem("account", res.data.account);
+          localStorage.setItem("token", res.data.token);
+          this.$router.push({ name: "Home" });
+        })
+        .catch(() => {
+          alert("傳送失敗");
+        });
+    }
   },
   watch: {}
 };

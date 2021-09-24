@@ -93,7 +93,7 @@ section.main
 .wrapper
   max-width: 1180px
   margin: auto
-  padding: 0 10px
+  padding: 0 15px
   box-sizing: border-box
 
 h2
@@ -124,10 +124,11 @@ ul.paginate-box
   li
     margin: 0 .5rem
     a
-      color: $gray-001
-    &.active
+      color: $black-001
+      transition: .3s
+    &.active,&:hover
       a
-        color: $gray-001
+        color: $brown-003
 </style>
 
 <style lang="sass" scoped>
