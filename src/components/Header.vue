@@ -151,9 +151,9 @@ header
         +hover
           fill: $color-003
   +rwd(768px)
-    // padding: 18px
+    padding: 10px 18px
     .logo
-      width: 120px
+      // width: 40px
     .menu-box
       padding-left: 20px
       .page-box
