@@ -64,13 +64,14 @@ export default {
 
 <style lang="sass">
 @import "@/assets/sass/var.sass"
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap');
 
 *
   padding: 0
   margin: 0
-  color: $black-001
-  font-family: 'Noto Sans TC', serif
+  color: $dark-001
+  font-family: 'Noto Sans JP','Noto Sans TC', serif
 
 img
 	width: 100%
@@ -124,11 +125,11 @@ ul.paginate-box
   li
     margin: 0 .5rem
     a
-      color: $black-001
+      color: $dark-002
       transition: .3s
     &.active,&:hover
       a
-        color: $brown-003
+        color: $dark-001
 
 .editor
   text-align: left
@@ -235,7 +236,7 @@ ul.paginate-box
 @import "@/assets/sass/var.sass"
 
 #app
-  background-color: $brown-001
+  background-color: #fff
 
 .loading-mask
   width: 100%

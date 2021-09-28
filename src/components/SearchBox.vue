@@ -28,20 +28,24 @@ export default {
 .search-box-wrapper
   width: 100%
   input
-    width: calc(100% - 24px)
+    width: calc(100% - 30px)
     padding: 0 0.5rem
     font-size: 0.8rem
-    border: 1px solid $gray-002
+    background-color: #fff
+    border: 1px solid $dark-001
+    border-right: none
     line-height: 28px
     box-sizing: border-box
     +dib
     &:focus
       outline: none
   .search-icon
-    width: 24px
-    height: 24px
-    padding: 3px
-    background-color: $gray-002
+    width: 30px
+    height: 30px
+    padding: 5px
+    border: 1px solid $dark-001
+    border-left: none
+    background-color: #fff
     box-sizing: border-box
     cursor: pointer
     +dib
@@ -51,10 +55,10 @@ export default {
       line-height: 1
       vertical-align: top
       path
-        color: $brown-001
+        color: $dark-001
         transition: .3s
     +hover
       svg
         path
-          color: $brown-002
+          color: $dark-002
 </style>

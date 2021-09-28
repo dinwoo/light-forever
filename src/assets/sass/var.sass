@@ -2,10 +2,11 @@
 $gray-001: #eaeaea
 $gray-002: #c4c4c4
 
-$brown-001: #f7f1f0
-$brown-002: #c3a6a0
-$brown-003: #a15c38
-$black-001: #262220
+$color-001: #bbb
+$color-002: #E9E5DE
+$color-003: #F3F0E9
+$dark-001: #262220
+$dark-002: #7B7B7B
 
 =rwd($w)
 	@media only screen and (max-width: $w)
@@ -92,10 +93,10 @@ $black-001: #262220
 =btnStyle
 	display: inline-block
 	padding: 0.25rem 1rem
-	background-color: $brown-003
-	color: #000
+	background-color: $dark-001
+	color: $color-001
 	transition: .3s
 	cursor: pointer
 	+hover
-		color: #444
-		background-color: $brown-002
+		color: $color-002
+		background-color: $dark-002

@@ -1,7 +1,7 @@
 <template lang="pug">
 header
   router-link.logo(:to="{name:'Home'}")
-    img(src="http://fakeimg.pl/186x46/c4c4c4/000000/?text=LOGO")
+    img(src="@/assets/images/logo.jpg")
   .menu-box
     .page-box(v-show="!isMobile||(isMobile&&showMenu)")
       router-link.page-link(:to="{name:'About'}") 關於我們
@@ -112,7 +112,7 @@ export default {
 header
   width: 100%
   padding: 18px
-  background-color: $brown-001
+  background-color: $dark-001
   box-shadow: 0 0 5px #ddd
   box-sizing: border-box
   display: flex
@@ -124,7 +124,7 @@ header
   z-index: 100
   .logo
     display: block
-    width: 186px
+    width: 50px
   .menu-box
     .page-box
       +dib
@@ -132,10 +132,10 @@ header
         font-size: 0.8rem
         font-weight: 400
         margin: 0 0.8rem
-        color: $black-001
+        color: $color-001
         transition: .3s
         +hover
-          color: $brown-003
+          color: $color-003
     .search-box
       margin: 0 0.4rem
       +dib
@@ -146,10 +146,10 @@ header
       +dib
       .svg-box
         line-height: 1
-        fill: $black-001
+        fill: $color-001
         transition: .3s
         +hover
-          fill: $brown-003
+          fill: $color-003
   +rwd(768px)
     // padding: 18px
     .logo
@@ -159,7 +159,7 @@ header
       .page-box
         width: 100px
         background-color: #fff
-        border: 1px solid $brown-002
+        border: 1px solid $color-002
         position: absolute
         right: 0
         bottom: 0
@@ -171,7 +171,7 @@ header
           padding: .5rem 0
           display: block
           & + .page-link
-            border-top: 1px solid $brown-002
+            border-top: 1px solid $color-002
       .search-box
         width: calc( 100% - 90px )
         // margin: 0 0.4rem

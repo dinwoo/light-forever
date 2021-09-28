@@ -2,7 +2,7 @@
 footer
   .footer-container
     router-link.logo(:to="{name:'Home'}")
-      img(src="http://fakeimg.pl/186x163/eee/000000/?text=LOGO")
+      img(src="@/assets/images/logo.jpg")
     .info-box
       .title 提供服務
       p.txt 提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案
@@ -38,7 +38,7 @@ export default {
 footer
   width: 100%
   padding: 3rem 2.5rem 2rem
-  background-color: $brown-003
+  background-color: $dark-001
   box-sizing: border-box
   .footer-container
     .logo
@@ -55,10 +55,12 @@ footer
       vertical-align: top
       .title
         margin-bottom: 0.6rem
-        font-size: 1.5rem
-        font-weight: 400
-      p.txt
         font-size: 1rem
+        font-weight: 400
+        color: $color-001
+      p.txt
+        font-size: .8rem
+        color: $color-001
         & + .title
           margin-top: 2rem
       .svg-icon
@@ -72,17 +74,18 @@ footer
           height: 100%
           vertical-align: middle
           path
-            color: $black-001
+            color: $color-001
             transition: .3s
         +hover
           svg
             path
-              color: $brown-002
+              color: $color-003
 
   .copyright
     margin-top: 1.5rem
     p
-      font-size: 1rem
+      font-size: .8rem
+      color: $color-001
   +rwd(768px)
     padding: 2rem 2.5rem
     .footer-container

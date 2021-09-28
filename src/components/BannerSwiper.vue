@@ -88,12 +88,12 @@ export default {
     button
       &:before
         font-size: 20px
-        color: $brown-002
+        color: $color-003
         opacity: 1
     &.slick-active
       button
         &:before
-          color: $brown-001
+          color: $dark-001
   +rwd(768px)
 </style>
 
