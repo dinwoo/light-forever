@@ -1,6 +1,6 @@
 <template lang="pug">
 .search-box-wrapper
-  input(type="text" v-model="txt")
+  input(type="text" v-model="txt" @keyup.enter="$emit('searchHandler',txt)")
   .search-icon(@click="$emit('searchHandler',txt)")
     font-awesome-icon(:icon="['fas','search']")
 </template>
