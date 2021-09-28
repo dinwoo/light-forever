@@ -4,10 +4,18 @@ article.product
     BannerSwiper(:pictureLink="banner" :isSmall="true")
   section.main
     .wrapper
-      h2.title 產品搜尋結果 ： {搜尋的關鍵字}
-      .search-box
+      h2.title 產品搜尋結果 ： {{$route.query.t}}
+      //- .search-box
         SearchBox
-      CardList(:cardData="cardData" routeName="Series")
+      CardList(:cardData="product.search.products" routeName="Series")
+      paginate(
+        :page-count="product.search.allPages||0"
+        :click-handler="pageHandler"
+        :prev-text="'Prev'"
+        :next-text="'Next'"
+        :container-class="'paginate-box'"
+        :hide-prev-next="true"
+      )
 </template>
 
 <script>
@@ -15,10 +23,11 @@ import { mapState, mapActions } from "vuex";
 import BannerSwiper from "@/components/BannerSwiper.vue";
 import CardList from "@/components/CardList.vue";
 import SearchBox from "@/components/SearchBox.vue";
+import Paginate from "vuejs-paginate";
 
 export default {
-  name: "Product",
-  components: { BannerSwiper, CardList, SearchBox },
+  name: "Search",
+  components: { BannerSwiper, CardList, SearchBox, Paginate },
   props: {},
   mixins: [],
   data() {
@@ -27,68 +36,43 @@ export default {
         pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=SearchBanner"],
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=SearchBanner"]
       },
-      cardData: [
-        {
-          id: 1,
-          title: "title",
-          description:
-            "description description description description description",
-          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-        },
-        {
-          id: 2,
-          title: "title",
-          description:
-            "description description description description description",
-          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-        },
-        {
-          id: 3,
-          title: "title",
-          description:
-            "description description description description description",
-          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-        },
-        {
-          id: 4,
-          title: "title",
-          description:
-            "description description description description description",
-          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-        },
-        {
-          id: 5,
-          title: "title",
-          description:
-            "description description description description description",
-          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-        },
-        {
-          id: 6,
-          title: "title",
-          description:
-            "description description description description description",
-          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-        },
-        {
-          id: 7,
-          title: "title",
-          description:
-            "description description description description description",
-          picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-        }
-      ]
+      pageSize: 10
     };
   },
   computed: {
-    ...mapState(["isLoading"])
+    ...mapState(["isLoading", "product"]),
+    select() {
+      return this.$route.query.t;
+    }
   },
-  created() {},
+  created() {
+    this.getSearchApi(1);
+  },
   mounted() {},
   methods: {
-    ...mapActions([""])
+    ...mapActions(["getSearchList"]),
+    getSearchApi(currentPage) {
+      this.getSearchList({
+        select: this.select,
+        pageSize: this.pageSize,
+        currentPage
+      })
+        .then(() => {
+          console.log("success");
+        })
+        .catch(() => {
+          console.log("fail");
+        });
+    },
+    pageHandler(pageNum) {
+      this.getSearchApi(pageNum);
+    }
   },
-  watch: {}
+  watch: {
+    select() {
+      this.getSearchApi(1);
+    }
+  }
 };
 </script>
 
@@ -105,7 +89,7 @@ article.product
       .search-box
         position: absolute
         top: 0
-        right: 0
+        right: 15px
   +rwd(768px)
     section.main
       .wrapper

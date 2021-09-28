@@ -1,7 +1,7 @@
 <template lang="pug">
-article.home
+article.home(v-if="!isLoading")
   section.banner
-    BannerSwiper(:pictureLink="home.banner")
+    BannerSwiper(:pictureLink="home.banner" :isSmall="false")
   section.main
     .wrapper
       h2 公司、產品、企業精神文案標題（或是slogan）
@@ -9,20 +9,10 @@ article.home
   section.product
     .wrapper
       .series-box
-        .series-item
-          p.series-name 熱銷產品系列
+        .series-item(v-for="product in product.category.productCategories" :key="product.id")
+          p.series-name {{product.name}}
           .series-pic(
-            :style="`background-image:url('${(product.pic)}')`"
-          )
-        .series-item
-          p.series-name 熱銷產品系列
-          .series-pic(
-            :style="`background-image:url('${(product.pic)}')`"
-          )
-        .series-item
-          p.series-name 熱銷產品系列
-          .series-pic(
-            :style="`background-image:url('${(product.pic)}')`"
+            :style="`background-image:url('${(product.img)}')`"
           )
       router-link.btn(:to="{name:'Product'}") 更多產品
 </template>
@@ -37,33 +27,26 @@ export default {
   props: {},
   mixins: [],
   data() {
-    return {
-      banner: {
-        pc: [
-          "http://fakeimg.pl/1440x800/eee/000000/?text=HomeBanner1",
-          "http://fakeimg.pl/1440x800/eee/000000/?text=HomeBanner2"
-        ],
-        mobile: [
-          "http://fakeimg.pl/711x1151/eee/000000/?text=HomeBanner1",
-          "http://fakeimg.pl/711x1151/eee/000000/?text=HomeBanner2"
-        ]
-      },
-      product: {
-        pic: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-      }
-    };
+    return {};
   },
   computed: {
-    ...mapState(["isLoading", "home"])
+    ...mapState(["isLoading", "home", "product"])
   },
   created() {
-    this.getBannerApi();
+    this.getApi();
   },
   mounted() {},
   methods: {
-    ...mapActions(["getBanner"]),
-    getBannerApi() {
-      this.getBanner({})
+    ...mapActions(["getBanner", "getCategoryList"]),
+    getApi() {
+      Promise.all([
+        this.getBanner(),
+        this.getCategoryList({
+          select: "",
+          pageSize: 3,
+          currentPage: 1
+        })
+      ])
         .then(() => {
           console.log("success");
         })

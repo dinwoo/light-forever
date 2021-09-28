@@ -5,7 +5,7 @@ article.series
   section.main
     .wrapper
       .breadcrumb
-        .breadcrumb-item 產品系列
+        router-link.breadcrumb-item(:to="{name:'Product'}") 產品展示
         .breadcrumb-item {{product.list.categoryName}}
       h2.title {{product.list.categoryName}}
       p.info {{product.list.categoryDescription}}

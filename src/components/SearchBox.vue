@@ -29,6 +29,7 @@ export default {
   width: 100%
   input
     width: calc(100% - 24px)
+    padding: 0 0.5rem
     font-size: 0.8rem
     border: 1px solid $gray-002
     line-height: 28px

@@ -6,7 +6,7 @@ article.contact
     .wrapper
       h2.title 聯絡我們
       p.description 聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案
-      .form-box
+      .contact-form-box
         .row
           label
             .field-title 姓名
@@ -89,7 +89,7 @@ article.contact
         text-align: center
       p.description
         margin-bottom: 5rem
-      .form-box
+      .contact-form-box
         width: 100%
         padding: 50px 150px
         border: 1px solid $gray-002
@@ -126,7 +126,7 @@ article.contact
           margin-bottom: 1.5rem
         p.description
           margin-bottom: 2rem
-        .form-box
+        .contact-form-box
           padding: 25px 30px
           .row
             & + .row

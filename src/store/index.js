@@ -13,8 +13,10 @@ export default new Vuex.Store({
     product: {
       category: {},
       list: {},
-      detail: {}
-    }
+      detail: {},
+      search: {}
+    },
+    search: {}
   },
   mutations: {
     // 切換語系設定
@@ -38,6 +40,9 @@ export default new Vuex.Store({
     },
     SET_PRODUCT_DETAIL(state, data) {
       state.product.detail = data;
+    },
+    SET_SEARCH_LIST(state, data) {
+      state.search = data;
     },
     SET_MEMBER_INFO(state, data) {
       state.member = data;
@@ -63,6 +68,31 @@ export default new Vuex.Store({
           })
           .catch(({ response }) => {
             // context.commit("SET_LOADING", false);
+            console.log(response);
+            reject();
+          });
+      });
+    },
+    getSearchList(context, data) {
+      const { select, pageSize, currentPage } = data;
+      context.commit("SET_LOADING", true);
+      return new Promise((resolve, reject) => {
+        ApiService.post("api/product/full/search", {
+          select,
+          pageSize,
+          currentPage
+        })
+          .then(({ data }) => {
+            context.commit("SET_LOADING", false);
+            if (data.code == 200) {
+              context.commit("SET_SEARCH_LIST", data.data);
+              resolve();
+            } else {
+              alert(data.msg);
+            }
+          })
+          .catch(({ response }) => {
+            context.commit("SET_LOADING", false);
             console.log(response);
             reject();
           });

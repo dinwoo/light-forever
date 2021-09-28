@@ -39,57 +39,6 @@ export default {
         pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=ProductBanner"],
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ProductBanner"]
       },
-      // cardData: [
-      //   {
-      //     id: 1,
-      //     title: "title",
-      //     description:
-      //       "description description description description description",
-      //     picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-      //   },
-      //   {
-      //     id: 2,
-      //     title: "title",
-      //     description:
-      //       "description description description description description",
-      //     picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-      //   },
-      //   {
-      //     id: 3,
-      //     title: "title",
-      //     description:
-      //       "description description description description description",
-      //     picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-      //   },
-      //   {
-      //     id: 4,
-      //     title: "title",
-      //     description:
-      //       "description description description description description",
-      //     picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-      //   },
-      //   {
-      //     id: 5,
-      //     title: "title",
-      //     description:
-      //       "description description description description description",
-      //     picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-      //   },
-      //   {
-      //     id: 6,
-      //     title: "title",
-      //     description:
-      //       "description description description description description",
-      //     picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-      //   },
-      //   {
-      //     id: 7,
-      //     title: "title",
-      //     description:
-      //       "description description description description description",
-      //     picture: "http://fakeimg.pl/350x350/eee/000000/?text=PRODUCT"
-      //   }
-      // ],
       searchTxt: "",
       pageSize: 10
     };
@@ -141,7 +90,7 @@ article.product
       .search-box
         position: absolute
         top: 0
-        right: 0
+        right: 15px
   +rwd(768px)
     section.main
       .wrapper

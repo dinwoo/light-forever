@@ -5,14 +5,15 @@ article.product-info-wrapper
   section.main
     .wrapper
       .breadcrumb
-        .breadcrumb-item 產品系列
+        router-link.breadcrumb-item(:to="{name:'Product'}") 產品展示
         router-link.breadcrumb-item(:to="{name:'Series', params:{id:product.detail.categoryId}}") {{product.detail.categoryName}}
+        router-link.breadcrumb-item(:to="{name:'ProductInfo', params:{id:product.detail.id}}") {{product.detail.name}}
       .product-info
         img.product-pic(:src="product.detail.img")
         .info-box
           h2.title {{product.detail.name}}
           p.description {{product.detail.description}}
-      .produvt-introduce(v-html="product.detail.infos")
+      .produvt-introduce.editor(v-html="product.detail.infos")
 </template>
 
 <script>

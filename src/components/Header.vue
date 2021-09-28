@@ -8,7 +8,10 @@ header
       router-link.page-link(:to="{name:'Product'}") 產品展示
       router-link.page-link(:to="{name:'Contact'}") 聯絡我們
     .search-box
-      SearchBox
+      SearchBox(
+        :searchTxt="searchTxt"
+        @searchHandler="searchHandler"
+      )
     router-link.member-link(:to="{name:'Member'}")
       .svg-box
         include ../assets/pug/member.pug
@@ -29,7 +32,8 @@ export default {
     return {
       isMobile: false,
       showMenu: false,
-      sceneArr: []
+      sceneArr: [],
+      searchTxt: ""
     };
   },
   computed: {
@@ -75,6 +79,15 @@ export default {
 
       this.sceneArr.forEach(scene => {
         this.$scrollmagic.addScene(scene);
+      });
+    },
+    searchHandler(txt) {
+      this.searchTxt = "";
+      this.$router.push({
+        name: "Search",
+        query: {
+          t: txt
+        }
       });
     }
   },
