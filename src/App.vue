@@ -111,9 +111,15 @@ p
   .breadcrumb-item
     cursor: pointer
     +dib
+    p
+      font-size: 0.8rem
+      font-weight: 600
+      +dib
     & + .breadcrumb-item
       &:before
         content: '>'
+        font-size: 0.8rem
+        font-weight: 600
         padding: 0 0.5rem
         +dib
 

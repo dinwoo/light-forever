@@ -5,9 +5,12 @@ article.product-info-wrapper
   section.main
     .wrapper
       .breadcrumb
-        router-link.breadcrumb-item(:to="{name:'Product'}") 產品展示
-        router-link.breadcrumb-item(:to="{name:'Series', params:{id:product.detail.categoryId}}") {{product.detail.categoryName}}
-        router-link.breadcrumb-item(:to="{name:'ProductInfo', params:{id:product.detail.id}}") {{product.detail.name}}
+        router-link.breadcrumb-item(:to="{name:'Product'}")
+          p 產品展示
+        router-link.breadcrumb-item(:to="{name:'Series', params:{id:product.detail.categoryId}}")
+          p {{product.detail.categoryName}}
+        router-link.breadcrumb-item(:to="{name:'ProductInfo', params:{id:product.detail.id}}")
+          p {{product.detail.name}}
       .product-info
         img.product-pic(:src="product.detail.img")
         .info-box

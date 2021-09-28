@@ -5,8 +5,10 @@ article.series
   section.main
     .wrapper
       .breadcrumb
-        router-link.breadcrumb-item(:to="{name:'Product'}") 產品展示
-        .breadcrumb-item {{product.list.categoryName}}
+        router-link.breadcrumb-item(:to="{name:'Product'}")
+          p 產品展示
+        .breadcrumb-item
+          p {{product.list.categoryName}}
       h2.title {{product.list.categoryName}}
       p.info {{product.list.categoryDescription}}
       .search-box
