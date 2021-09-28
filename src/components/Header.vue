@@ -101,6 +101,10 @@ export default {
           this.timer = false;
         }, 400);
       }
+    },
+    "$route.name": function(name) {
+      this.showMenu = false;
+      console.log(name);
     }
   }
 };
@@ -151,27 +155,28 @@ header
         +hover
           fill: $color-003
   +rwd(768px)
-    // padding: 18px
+    padding: 10px 18px
     .logo
-      width: 120px
+      // width: 40px
     .menu-box
       padding-left: 20px
       .page-box
         width: 100px
         background-color: #fff
-        border: 1px solid $color-002
+        border: 1px solid $dark-002
         position: absolute
         right: 0
         bottom: 0
         transform: translateY(100%)
         .page-link
           text-align: center
+          color: $dark-001
           // font-size: 0.8rem
           margin: 0
           padding: .5rem 0
           display: block
           & + .page-link
-            border-top: 1px solid $color-002
+            border-top: 1px solid $dark-002
       .search-box
         width: calc( 100% - 90px )
         // margin: 0 0.4rem
@@ -184,11 +189,11 @@ header
         width: 30px
         height: 20px
         margin-left: 1rem
-        background-image: linear-gradient(#000 0%,#000 calc(0% + 4px),transparent calc(0% + 4px),transparent calc(50% - 2px),#000 calc(50% - 2px),#000 calc(50% + 2px),transparent calc(50% + 2px),transparent calc(100% - 4px),#000 calc(100% - 4px),#000 100%)
+        background-image: linear-gradient($color-001 0%,$color-001 calc(0% + 4px),transparent calc(0% + 4px),transparent calc(50% - 2px),$color-001 calc(50% - 2px),$color-001 calc(50% + 2px),transparent calc(50% + 2px),transparent calc(100% - 4px),$color-001 calc(100% - 4px),$color-001 100%)
         opacity: .6
         cursor: pointer
         transition: .3s
         +dib
         +hover
-          background-image: linear-gradient(#ccc 0%,#ccc calc(0% + 4px),transparent calc(0% + 4px),transparent calc(50% - 2px),#ccc calc(50% - 2px),#ccc calc(50% + 2px),transparent calc(50% + 2px),transparent calc(100% - 4px),#ccc calc(100% - 4px),#ccc 100%)
+          background-image: linear-gradient($color-003 0%,$color-003 calc(0% + 4px),transparent calc(0% + 4px),transparent calc(50% - 2px),$color-003 calc(50% - 2px),$color-003 calc(50% + 2px),transparent calc(50% + 2px),transparent calc(100% - 4px),$color-003 calc(100% - 4px),$color-003 100%)
 </style>
