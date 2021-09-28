@@ -37,7 +37,7 @@ export default {
   flex-wrap: wrap
   .card-item
     width: calc(33.333333% - 60px)
-    margin-bottom: 2rem
+    margin-bottom: 6rem
     display: block
     .card-pic
       width: 100%
@@ -51,7 +51,8 @@ export default {
       font-size: 1.2rem
       text-align: center
     .card-description
-      font-size: 1.2rem
+      font-size: .9rem
+      color: rgba(128,128,128,1)
       line-height: 1.5
       display: -webkit-box
       -webkit-line-clamp: 2

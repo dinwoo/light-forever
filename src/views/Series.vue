@@ -141,18 +141,19 @@ article.series
   section.main
     .wrapper
       h2.title
-        margin: 1rem 0
+        margin: 2rem 0
+        text-align: left
       p.info
-        margin-bottom: 2rem
+        margin-bottom: 6rem
       .search-box
         width: 360px
         margin-left: auto
-        margin-bottom: 3rem
+        margin-bottom: 6rem
   +rwd(768px)
     section.main
       .wrapper
         h2.title
-          text-align: center
+          // text-align: center
           // margin: 1rem 0
         p.info
           // margin-bottom: 2rem

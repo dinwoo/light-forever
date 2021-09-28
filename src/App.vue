@@ -107,6 +107,7 @@ p
   line-height: 1.2
 
 .breadcrumb
+  margin-bottom: 5rem
   .breadcrumb-item
     cursor: pointer
     +dib
