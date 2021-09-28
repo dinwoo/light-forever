@@ -8,7 +8,7 @@ function resolve(dir) {
 
 module.exports = {
   runtimeCompiler: true,
-  publicPath: "/",
+  publicPath: "/light-forever/",
   devServer: {
     /* https option */
     // open: process.platform === 'darwin',
