@@ -42,7 +42,7 @@ export default new Vuex.Store({
       state.product.detail = data;
     },
     SET_SEARCH_LIST(state, data) {
-      state.search = data;
+      state.product.search = data;
     },
     SET_MEMBER_INFO(state, data) {
       state.member = data;

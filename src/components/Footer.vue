@@ -43,10 +43,11 @@ footer
   .footer-container
     .logo
       width: 25%
-      padding-right: 8rem
       box-sizing: border-box
       display: inline-block
       vertical-align: top
+      img
+        width: 80%
     .info-box
       width: 25%
       padding-right: 2rem
