@@ -8,7 +8,7 @@ article.product
       .search-box
         SearchBox(
           :searchTxt="searchTxt"
-          placeholderTxt="輸入產品關鍵字"
+          placeholderTxt="輸入系列關鍵字"
           @searchHandler="searchHandler"
         )
       CardList(:cardData="product.category.productCategories" routeName="Series")
