@@ -41,7 +41,7 @@ export default {
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ProductBanner"]
       },
       searchTxt: "",
-      pageSize: 10
+      pageSize: 9
     };
   },
   computed: {

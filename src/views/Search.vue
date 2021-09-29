@@ -36,7 +36,7 @@ export default {
         pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=SearchBanner"],
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=SearchBanner"]
       },
-      pageSize: 10
+      pageSize: 9
     };
   },
   computed: {

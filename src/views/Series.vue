@@ -98,7 +98,7 @@ export default {
       //   }
       // ]
       searchTxt: "",
-      pageSize: 10
+      pageSize: 9
     };
   },
   computed: {
