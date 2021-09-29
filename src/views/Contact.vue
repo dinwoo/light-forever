@@ -93,6 +93,7 @@ article.contact
         width: 100%
         padding: 50px 150px
         border: 1px solid $gray-002
+        box-shadow: 12px 12px 7px rgba(0,0,0,.4)
         box-sizing: border-box
         .row
           width: 100%
