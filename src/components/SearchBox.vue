@@ -1,7 +1,7 @@
 <template lang="pug">
 .search-box-wrapper
-  input(type="text" v-model="txt" @keyup.enter="$emit('searchHandler',txt)")
-  .search-icon(@click="$emit('searchHandler',txt)")
+  input(type="text" v-model="txt" @keyup.enter="emitHandler" :placeholder="placeholderTxt")
+  .search-icon(@click="emitHandler")
     font-awesome-icon(:icon="['fas','search']")
 </template>
 
@@ -9,10 +9,17 @@
 export default {
   name: "SearchBox",
   props: {
-    searchTxt: String
+    searchTxt: String,
+    placeholderTxt: String
   },
   data() {
     return { txt: "" };
+  },
+  methods: {
+    emitHandler() {
+      this.$emit("searchHandler", this.txt);
+      this.txt = "";
+    }
   },
   watch: {
     searchTxt(val) {

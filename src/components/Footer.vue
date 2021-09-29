@@ -47,7 +47,7 @@ footer
       display: inline-block
       vertical-align: top
       img
-        width: 80%
+        width: 60%
     .info-box
       width: 25%
       padding-right: 2rem
@@ -94,6 +94,8 @@ footer
         width: 50%
         margin-bottom: 1rem
         padding-right: 2rem
+        img
+          width: 80%
       .info-box
         width: 50%
         margin-bottom: 1rem

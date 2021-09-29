@@ -10,6 +10,7 @@ header
     .search-box
       SearchBox(
         :searchTxt="searchTxt"
+        placeholderTxt="輸入產品關鍵字"
         @searchHandler="searchHandler"
       )
     router-link.member-link(:to="{name:'Member'}")

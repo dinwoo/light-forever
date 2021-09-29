@@ -7,7 +7,7 @@ article.product
       h2.title 產品搜尋結果 ： {{$route.query.t}}
       //- .search-box
         SearchBox
-      CardList(:cardData="product.search.products" routeName="Series")
+      CardList(:cardData="product.search.products" routeName="ProductInfo")
       paginate(
         :page-count="product.search.allPages||0"
         :click-handler="pageHandler"

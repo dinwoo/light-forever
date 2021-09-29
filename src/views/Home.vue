@@ -89,7 +89,7 @@ article.home
             background-position: center center
             background-repeat: no-repeat
       .btn
-        margin: 2rem
+        margin: 6rem 0 3rem 0
         +btnStyle
   +rwd(768px)
     section.banner

@@ -14,6 +14,7 @@ article.series
       .search-box
         SearchBox(
           :searchTxt="searchTxt"
+          placeholderTxt="輸入系列關鍵字"
           @searchHandler="searchHandler"
         )
       CardList(:cardData="product.list.products" routeName="ProductInfo")
@@ -126,6 +127,7 @@ export default {
     searchHandler(txt) {
       this.searchTxt = txt;
       this.getProductApi(txt, 1);
+      this.searchTxt = "";
     },
     pageHandler(pageNum) {
       this.getProductApi(this.searchTxt, pageNum);

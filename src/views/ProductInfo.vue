@@ -17,6 +17,7 @@ article.product-info-wrapper
           h2.title {{product.detail.name}}
           p.description {{product.detail.description}}
       .produvt-introduce.editor(v-html="product.detail.infos")
+      router-link.btn(:to="{name:'Series', params:{id:product.detail.categoryId}}") 查看更多
 </template>
 
 <script>
@@ -69,9 +70,13 @@ article.product-info-wrapper
   section.main
     .wrapper
       position: relative
+      text-align: center
+      .breadcrumb
+        text-align: left
       .product-info
         padding: 2rem 0
         border-bottom: 1px solid $gray-002
+        text-align: left
         .product-pic
           width: 360px
           display: inline-block
@@ -87,6 +92,7 @@ article.product-info-wrapper
           p.description
       .produvt-introduce
         padding: 2rem 0
+        text-align: left
         h2.introduce-title
           text-align: center
           margin-bottom: 1rem
@@ -98,6 +104,9 @@ article.product-info-wrapper
           max-width: 680px
           margin: auto
           display: block
+      .btn
+        margin: 6rem 0 3rem
+        +btnStyle
   +rwd(768px)
     section.banner
     section.main
@@ -118,4 +127,6 @@ article.product-info-wrapper
           h2.introduce-title
           p.introduce-description
           img.introduce-pic
+        .btn
+          margin: 1rem
 </style>
