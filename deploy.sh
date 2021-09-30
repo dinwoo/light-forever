@@ -5,6 +5,8 @@ set -e
 
 git checkout feature/github-deploy
 
+git rebase develop
+
 # 打包編譯
 npm run build
 
