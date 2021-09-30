@@ -33,12 +33,15 @@ export default {
 
 .card-list-wrapper
   display: flex
-  justify-content: space-between
+  justify-content: flex-start
   flex-wrap: wrap
   .card-item
-    width: calc(33.333333% - 60px)
+    width: calc(33.333333% - 2rem)
     margin-bottom: 6rem
     display: block
+    &:nth-child(3n+2)
+      margin-right: 3rem
+      margin-left: 3rem
     .card-pic
       width: 100%
       padding-bottom: 100%
@@ -62,6 +65,9 @@ export default {
   +rwd(768px)
     .card-item
       width: 100%
+      &:nth-child(3n+2)
+        margin-right: 0
+        margin-left: 0
       .card-pic
       .card-title
       .card-description
