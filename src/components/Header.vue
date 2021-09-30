@@ -1,7 +1,7 @@
 <template lang="pug">
 header
   router-link.logo(:to="{name:'Home'}")
-    img(src="@/assets/images/logo.jpg")
+    img(src="@/assets/images/logo.png")
   .menu-box
     .page-box(v-show="!isMobile||(isMobile&&showMenu)")
       router-link.page-link(:to="{name:'About'}") 關於我們

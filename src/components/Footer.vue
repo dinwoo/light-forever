@@ -2,7 +2,7 @@
 footer
   .footer-container
     router-link.logo(:to="{name:'Home'}")
-      img(src="@/assets/images/logo.jpg")
+      img(src="@/assets/images/logo.png")
     .info-box
       .title 提供服務
       p.txt 提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案
@@ -48,6 +48,7 @@ footer
       vertical-align: top
       img
         width: 60%
+        max-width: 100px
     .info-box
       width: 25%
       padding-right: 2rem
@@ -66,6 +67,7 @@ footer
           margin-top: 2rem
       .svg-icon
         width: 25%
+        max-width: 60px
         padding: 5px
         box-sizing: border-box
         cursor: pointer
