@@ -13,13 +13,16 @@
 
 <script>
 import { mapState } from "vuex";
+import { gsap } from "gsap";
 
 export default {
   name: "InfoList",
   components: {},
   props: ["listData"],
   data() {
-    return {};
+    return {
+      sceneArr: []
+    };
   },
   watch: {
     screenWidth(val) {
@@ -35,14 +38,105 @@ export default {
       // }
     }
   },
-  mounted() {},
+  mounted() {
+    this.setInitial();
+    this.setAnimate();
+  },
   computed: {
     ...mapState(["screenWidth"]),
     linkIndex() {
       return this.isMobile ? "mobile" : "pc";
     }
   },
-  methods: {}
+  methods: {
+    setInitial() {
+      gsap.set(
+        ".info-item:nth-child(odd) .pic-box,.info-item:nth-child(even) .info-box",
+        {
+          x: 100,
+          opacity: 0
+        }
+      );
+      gsap.set(
+        ".info-item:nth-child(even) .pic-box,.info-item:nth-child(odd) .info-box",
+        {
+          x: -100,
+          opacity: 0
+        }
+      );
+    },
+    setAnimate() {
+      this.sceneArr[0] = this.$scrollmagic
+        .scene({
+          triggerElement: ".info-item:nth-child(1)",
+          triggerHook: 1,
+          reverse: false
+        })
+        // .setTween(tl)
+        .on("enter", function() {
+          gsap
+            .timeline()
+            .to(".info-item:nth-child(1) .pic-box", 1, {
+              x: 0,
+              opacity: 1
+            })
+            .to(".info-item:nth-child(1) .info-box", 1, {
+              x: 0,
+              opacity: 1,
+              delay: -1
+            });
+        });
+      // .addIndicators({ name: "banner" });
+
+      this.sceneArr[1] = this.$scrollmagic
+        .scene({
+          triggerElement: ".info-item:nth-child(2)",
+          triggerHook: 1,
+          reverse: false
+        })
+        // .setTween(tl)
+        .on("enter", function() {
+          gsap
+            .timeline()
+            .to(".info-item:nth-child(2) .pic-box", 1, {
+              x: 0,
+              opacity: 1
+            })
+            .to(".info-item:nth-child(2) .info-box", 1, {
+              x: 0,
+              opacity: 1,
+              delay: -1
+            });
+        });
+      // .addIndicators({ name: "banner" });
+
+      this.sceneArr[2] = this.$scrollmagic
+        .scene({
+          triggerElement: ".info-item:nth-child(3)",
+          triggerHook: 1,
+          reverse: false
+        })
+        // .setTween(tl)
+        .on("enter", function() {
+          gsap
+            .timeline()
+            .to(".info-item:nth-child(3) .pic-box", 1, {
+              x: 0,
+              opacity: 1
+            })
+            .to(".info-item:nth-child(3) .info-box", 1, {
+              x: 0,
+              opacity: 1,
+              delay: -1
+            });
+        });
+      // .addIndicators({ name: "banner" });
+
+      this.sceneArr.forEach(scene => {
+        this.$scrollmagic.addScene(scene);
+      });
+    }
+  }
 };
 </script>
 

@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+import { gsap, TweenMax } from "gsap";
+
 export default {
   name: "CardList",
   components: {},
@@ -19,12 +22,63 @@ export default {
     routeName: String
   },
   data() {
-    return {};
+    return {
+      sceneArr: []
+    };
   },
-  watch: {},
-  mounted() {},
-  computed: {},
-  methods: {}
+  watch: {
+    isLoading(val) {
+      console.log(val);
+      if (!val) {
+        setTimeout(() => {
+          this.setInitial();
+          this.setAnimate();
+        }, 1);
+      }
+    }
+  },
+  mounted() {
+    this.setInitial();
+  },
+  computed: {
+    ...mapState(["isLoading"])
+  },
+  methods: {
+    setInitial() {
+      gsap.set(".card-item", {
+        y: 100,
+        opacity: 0
+      });
+    },
+    setAnimate() {
+      this.sceneArr[0] = this.$scrollmagic
+        .scene({
+          triggerElement: ".card-list-wrapper",
+          triggerHook: 1,
+          reverse: false
+        })
+        // .setTween(tl)
+        .on("enter", function() {
+          gsap.timeline().add(
+            TweenMax.staggerTo(
+              ".card-item",
+              1,
+              {
+                y: 0,
+                opacity: 1,
+                delay: -1
+              },
+              0.5
+            )
+          );
+        });
+      // .addIndicators({ name: "banner" });
+
+      this.sceneArr.forEach(scene => {
+        this.$scrollmagic.addScene(scene);
+      });
+    }
+  }
 };
 </script>
 

@@ -23,6 +23,7 @@ article.product-info-wrapper
 <script>
 import { mapState, mapActions } from "vuex";
 import BannerSwiper from "@/components/BannerSwiper.vue";
+import { gsap } from "gsap";
 
 export default {
   name: "ProductInfo",
@@ -34,7 +35,8 @@ export default {
       banner: {
         pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=ProductBanner"],
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ProductBanner"]
-      }
+      },
+      sceneArr: []
     };
   },
   computed: {
@@ -43,7 +45,9 @@ export default {
   created() {
     this.getProductApi();
   },
-  mounted() {},
+  mounted() {
+    this.setInitial();
+  },
   methods: {
     ...mapActions(["getProductDetail"]),
     getProductApi() {
@@ -56,9 +60,58 @@ export default {
         .catch(() => {
           console.log("fail");
         });
+    },
+    setInitial() {
+      gsap.set(".breadcrumb,.product-info,.produvt-introduce,.btn", {
+        y: 100,
+        opacity: 0
+      });
+    },
+    setAnimate() {
+      this.sceneArr[0] = this.$scrollmagic
+        .scene({
+          triggerElement: "section.main",
+          triggerHook: 1,
+          reverse: false
+        })
+        // .setTween(tl)
+        .on("enter", function() {
+          gsap
+            .timeline()
+            .to(".breadcrumb", 1, {
+              y: 0,
+              opacity: 1
+            })
+            .to(".product-info", 1, {
+              y: 0,
+              opacity: 1,
+              delay: -0.7
+            })
+            .to(".produvt-introduce", 1, {
+              y: 0,
+              opacity: 1,
+              delay: -0.7
+            })
+            .to(".btn", 1, {
+              y: 0,
+              opacity: 1,
+              delay: -0.7
+            });
+        });
+      // .addIndicators({ name: "banner" });
+
+      this.sceneArr.forEach(scene => {
+        this.$scrollmagic.addScene(scene);
+      });
     }
   },
-  watch: {}
+  watch: {
+    isLoading(val) {
+      if (!val) {
+        this.setAnimate();
+      }
+    }
+  }
 };
 </script>
 

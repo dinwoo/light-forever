@@ -1,6 +1,6 @@
 <template lang="pug">
 article.home(v-if="!isLoading")
-  section.banner
+  section.banner(v-if="!isLoading")
     BannerSwiper(:pictureLink="home.banner" :isSmall="false")
   section.main
     .wrapper
@@ -20,6 +20,7 @@ article.home(v-if="!isLoading")
 <script>
 import { mapState, mapActions } from "vuex";
 import BannerSwiper from "@/components/BannerSwiper.vue";
+import { gsap } from "gsap";
 
 export default {
   name: "Home",
@@ -27,7 +28,9 @@ export default {
   props: {},
   mixins: [],
   data() {
-    return {};
+    return {
+      sceneArr: []
+    };
   },
   computed: {
     ...mapState(["isLoading", "home", "product"])
@@ -49,10 +52,48 @@ export default {
       ])
         .then(() => {
           console.log("success");
+          this.setInitial();
+          this.setAnimate();
         })
         .catch(() => {
           console.log("fail");
         });
+    },
+    setInitial() {
+      gsap.set("section.main", {
+        y: 100,
+        opacity: 0
+      });
+      gsap.set("section.product", {
+        y: 100,
+        opacity: 0
+      });
+    },
+    setAnimate() {
+      this.sceneArr[0] = this.$scrollmagic
+        .scene({
+          triggerElement: "section.main",
+          triggerHook: 1,
+          reverse: false
+        })
+        // .setTween(tl)
+        .on("enter", function() {
+          gsap
+            .timeline()
+            .to("section.main", 1, {
+              y: 0,
+              opacity: 1
+            })
+            .to("section.product", 1, {
+              y: 0,
+              opacity: 1
+            });
+        });
+      // .addIndicators({ name: "banner" });
+
+      this.sceneArr.forEach(scene => {
+        this.$scrollmagic.addScene(scene);
+      });
     }
   },
   watch: {}

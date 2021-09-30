@@ -34,6 +34,7 @@ import BannerSwiper from "@/components/BannerSwiper.vue";
 import CardList from "@/components/CardList.vue";
 import SearchBox from "@/components/SearchBox.vue";
 import Paginate from "vuejs-paginate";
+import { gsap } from "gsap";
 
 export default {
   name: "Product",
@@ -47,7 +48,8 @@ export default {
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=SeriesBanner"]
       },
       searchTxt: "",
-      pageSize: 9
+      pageSize: 9,
+      sceneArr: []
     };
   },
   computed: {
@@ -56,7 +58,10 @@ export default {
   created() {
     this.getProductApi("", 1);
   },
-  mounted() {},
+  mounted() {
+    this.setInitial();
+    this.setAnimate();
+  },
   methods: {
     ...mapActions(["getProductList"]),
     getProductApi(select, currentPage) {
@@ -80,6 +85,49 @@ export default {
     },
     pageHandler(pageNum) {
       this.getProductApi(this.searchTxt, pageNum);
+    },
+    setInitial() {
+      gsap.set(".breadcrumb,.title,.info,section.main .search-box", {
+        y: 100,
+        opacity: 0
+      });
+    },
+    setAnimate() {
+      this.sceneArr[0] = this.$scrollmagic
+        .scene({
+          triggerElement: "section.main",
+          triggerHook: 1,
+          reverse: false
+        })
+        // .setTween(tl)
+        .on("enter", function() {
+          gsap
+            .timeline()
+            .to(".breadcrumb", 1, {
+              y: 0,
+              opacity: 1
+            })
+            .to(".title", 1, {
+              y: 0,
+              opacity: 1,
+              delay: -0.7
+            })
+            .to(".info", 1, {
+              y: 0,
+              opacity: 1,
+              delay: -0.7
+            })
+            .to(".search-box", 1, {
+              y: 0,
+              opacity: 1,
+              delay: -0.7
+            });
+        });
+      // .addIndicators({ name: "banner" });
+
+      this.sceneArr.forEach(scene => {
+        this.$scrollmagic.addScene(scene);
+      });
     }
   },
   watch: {}
