@@ -193,12 +193,13 @@ export default new Vuex.Store({
       });
     },
     postEmail(context, data) {
-      const { name, phone, email, content } = data;
+      const { name, phone, company, email, content } = data;
       context.commit("SET_LOADING", true);
       return new Promise((resolve, reject) => {
         ApiService.post("api/contact/send", {
           name,
           phone,
+          company,
           email,
           content
         })

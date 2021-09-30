@@ -17,6 +17,10 @@ article.contact
             input(type="phone" v-model="phone")
         .row
           label
+            .field-title 公司
+            input(type="text" v-model="company")
+        .row
+          label
             .field-title Email
             input(type="text" v-model="email")
         .row
@@ -43,6 +47,7 @@ export default {
       },
       name: "",
       phone: "",
+      company: "",
       email: "",
       content: ""
     };
@@ -58,6 +63,7 @@ export default {
       this.postEmail({
         name: this.name,
         phone: this.phone,
+        company: this.company,
         email: this.email,
         content: this.content
       })
@@ -65,6 +71,7 @@ export default {
           alert("傳送成功");
           this.name = "";
           this.phone = "";
+          this.company = "";
           this.email = "";
           this.content = "";
         })
