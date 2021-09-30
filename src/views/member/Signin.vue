@@ -11,7 +11,8 @@
         .field-title 密碼
         input(type="password" v-model="password")
     .row
-      .forget-btn 忘記密碼？
+      router-link.signup-btn(:to="{name:'Signup'}") 會員註冊
+      router-link.forget-btn(:to="{name:'ForgetPassword'}") 忘記密碼？
   .btn(@click="postSigninHandler") 登入
 </template>
 
@@ -60,7 +61,13 @@ export default {
 @import "@/assets/sass/var.sass"
 
 .signin-wrapper
+  .signup-btn
+    text-decoration: underline
+  .signup-btn,.forget-btn
+    color: $dark-001
+    transition: .3s
+    +hover
+      color: $dark-002
   .forget-btn
-    text-align: right
-    cursor: pointer
+    float: right
 </style>
