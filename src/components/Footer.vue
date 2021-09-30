@@ -90,7 +90,7 @@ footer
       font-size: .8rem
       color: $color-001
   +rwd(768px)
-    padding: 2rem 2.5rem
+    padding: 1.5rem 1rem
     .footer-container
       .logo
         width: 50%
@@ -101,7 +101,7 @@ footer
       .info-box
         width: 50%
         margin-bottom: 1rem
-        padding-right: 1rem
+        padding-right: .5rem
         .title
           margin-bottom: 0.6rem
           font-size: 1.2rem
@@ -112,7 +112,7 @@ footer
         .svg-icon
           width: 50%
     .copyright
-      margin-top: 1rem
+      margin-top: .5rem
       p
         font-size: .75rem
 </style>

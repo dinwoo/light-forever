@@ -78,7 +78,7 @@ article.home
         display: flex
         justify-content: space-between
         .series-item
-          width: calc(33.3333% - 50px)
+          width: calc(33.3333% - 20px)
           p.series-name
             margin-bottom: 0.8rem
             text-align: center

@@ -122,6 +122,15 @@ p
         font-weight: 600
         padding: 0 0.5rem
         +dib
+  +rwd(768px)
+    margin-bottom: 2rem
+    .breadcrumb-item
+      p
+        // font-size: 0.8rem
+      & + .breadcrumb-item
+        &:before
+          // font-size: 0.8rem
+          // padding: 0 0.5rem
 
 ul.paginate-box
   width: 100%

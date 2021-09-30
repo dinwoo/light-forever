@@ -118,7 +118,6 @@ header
   width: 100%
   padding: 18px
   background-color: $dark-001
-  box-shadow: 0 0 5px #ddd
   box-sizing: border-box
   display: flex
   justify-content: space-between

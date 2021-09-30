@@ -50,7 +50,7 @@ export default {
       background-repeat: no-repeat
       position: relative
     .card-title
-      margin: 0.2rem 0
+      margin: 0.5rem 0 0.2rem
       font-size: 1.2rem
       text-align: center
     .card-description
@@ -65,6 +65,7 @@ export default {
   +rwd(768px)
     .card-item
       width: 100%
+      margin-bottom: 3rem
       &:nth-child(3n+2)
         margin-right: 0
         margin-left: 0

@@ -36,5 +36,5 @@ export default {
 article
   padding-top: 82px
   +rwd(768px)
-    padding-top: 67px
+    padding-top: 65px
 </style>
