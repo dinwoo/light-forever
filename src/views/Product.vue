@@ -1,7 +1,7 @@
 <template lang="pug">
 article.product
   section.banner
-    BannerSwiper(:pictureLink="banner" :isSmall="true")
+    BannerSwiper(:pictureLink="banner")
   section.main
     .wrapper
       h2.title 產品系列
@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       banner: {
-        pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=ProductBanner"],
+        pc: [this.compileFilePath("product-bn.jpg")],
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ProductBanner"]
       },
       searchTxt: "",

@@ -5,12 +5,14 @@ footer
       img(src="@/assets/images/logo.png")
     .info-box
       .title 提供服務
-      p.txt 提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案提供服務文案
+      p.txt 主要生產的燈飾有：吊燈、吸頂燈、臺燈、壁燈、立燈以及鏡燈，有近30年的燈飾相關經驗，長期以來主要以外銷爲主。以前我們每年都會有專業人員赴國外參加燈展，還有國內大型的燈展活動都會積極參與跟推廣，學習與研究。我們公司一直秉持著專業與服務、品質與信譽的經營理念，客製化的滿足每位顧客的需求，是我們長期以來堅持的目標跟榮幸！
     .info-box
       .title 公司地址
-      p.txt 新竹市東區林森路203號11-2
+      a.txt(href="https://goo.gl/maps/9n5HBQBzC9zqPemu8" target="_blank")  新竹市東區林森路203號11-2
       .title 聯絡資訊
-      p.txt xxxxx@gmail.com
+      a.txt(href="mailto:Light-Forever@Gmail.com") Light-Forever@Gmail.com
+      .title 聯絡電話
+      a.txt(href="tel:0930560600") 0930-560600
     .info-box
       a.svg-icon(href="" target="_blank")
         font-awesome-icon(:icon="['fab','instagram-square']")
@@ -60,11 +62,11 @@ footer
         font-size: 1rem
         font-weight: 400
         color: $color-001
-      p.txt
+      .txt
         font-size: .8rem
         color: $color-001
         & + .title
-          margin-top: 2rem
+          margin-top: 1rem
       .svg-icon
         width: 25%
         max-width: 60px

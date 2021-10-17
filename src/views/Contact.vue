@@ -5,7 +5,13 @@ article.contact
   section.main
     .wrapper
       h2.title 聯絡我們
-      p.description 聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案聯絡我們文案
+      p.description
+        | 如果您想節省時間和金錢，可以直接撥打0930-560600，致電我們，告訴我們您想要的需求。
+        br
+        br
+        | 如果您想要找到最合宜的燈飾或者其他合作方案，可以透過下方表單欄位的填寫，讓我們知道。或者，寫信給我們 
+        br
+        | Light-Forever@Gmail.com（請務必確認您的Email地址是正確的）
       .contact-form-box
         .row
           label
@@ -42,7 +48,7 @@ export default {
   data() {
     return {
       banner: {
-        pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=ContactBanner"],
+        pc: [this.compileFilePath("contact-us.jpg")],
         mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ContactBanner"]
       },
       name: "",
@@ -55,7 +61,9 @@ export default {
   computed: {
     ...mapState(["isLoading"])
   },
-  created() {},
+  created() {
+    console.log();
+  },
   mounted() {},
   methods: {
     ...mapActions(["postEmail"]),
@@ -95,7 +103,8 @@ article.contact
         margin-bottom: 2.5rem
         text-align: center
       p.description
-        margin-bottom: 5rem
+        max-width: 820px
+        margin:  0 auto 5rem
       .contact-form-box
         width: 100%
         padding: 50px 150px

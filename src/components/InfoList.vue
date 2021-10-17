@@ -7,7 +7,7 @@
       )
     .info-box
       h2.title {{item.title}}
-      p.description {{item.description}}
+      p.description(v-html="item.description")
 
 </template>
 
