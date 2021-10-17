@@ -1,7 +1,7 @@
 <template lang="pug">
 article.about
   section.banner
-    BannerSwiper(:pictureLink="banner")
+    BannerSwiper(:pictureLink="banner" :isSmall="screenWidth < 768")
   section.main
     .wrapper
       InfoList(:listData="listData")
@@ -21,7 +21,7 @@ export default {
     return {
       banner: {
         pc: [this.compileFilePath("about-bn.jpg")],
-        mobile: ["http://fakeimg.pl/711x1151/eee/000000/?text=AboutBanner"]
+        mobile: [this.compileFilePath("about-bn.jpg")]
       },
       listData: [
         {
@@ -40,7 +40,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["isLoading"])
+    ...mapState(["isLoading", "screenWidth"])
   },
   created() {},
   mounted() {},
@@ -57,6 +57,7 @@ export default {
 article.about
   section.banner
   section.main
+    overflow: hidden
     +rwd(768px)
       padding: 2.5rem 0
 </style>

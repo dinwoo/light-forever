@@ -1,7 +1,5 @@
 <template lang="pug">
 article.product-info-wrapper
-  //- section.banner
-  //-   BannerSwiper(:pictureLink="banner" :isSmall="true")
   section.main
     .wrapper
       .breadcrumb
@@ -32,10 +30,6 @@ export default {
   mixins: [],
   data() {
     return {
-      banner: {
-        pc: ["http://fakeimg.pl/1440x447/eee/000000/?text=ProductBanner"],
-        mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ProductBanner"]
-      },
       sceneArr: []
     };
   },

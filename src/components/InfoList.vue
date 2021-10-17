@@ -110,28 +110,6 @@ export default {
         });
       // .addIndicators({ name: "banner" });
 
-      this.sceneArr[2] = this.$scrollmagic
-        .scene({
-          triggerElement: ".info-item:nth-child(3)",
-          triggerHook: 1,
-          reverse: false
-        })
-        // .setTween(tl)
-        .on("enter", function() {
-          gsap
-            .timeline()
-            .to(".info-item:nth-child(3) .pic-box", 1, {
-              x: 0,
-              opacity: 1
-            })
-            .to(".info-item:nth-child(3) .info-box", 1, {
-              x: 0,
-              opacity: 1,
-              delay: -1
-            });
-        });
-      // .addIndicators({ name: "banner" });
-
       this.sceneArr.forEach(scene => {
         this.$scrollmagic.addScene(scene);
       });

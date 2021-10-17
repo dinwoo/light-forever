@@ -49,7 +49,7 @@ export default {
     return {
       banner: {
         pc: [this.compileFilePath("contact-us.jpg")],
-        mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=ContactBanner"]
+        mobile: [this.compileFilePath("contact-us.jpg")]
       },
       name: "",
       phone: "",

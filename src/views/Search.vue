@@ -1,7 +1,7 @@
 <template lang="pug">
 article.product
   section.banner
-    BannerSwiper(:pictureLink="banner")
+    BannerSwiper(:pictureLink="banner" :isSmall="screenWidth < 768")
   section.main
     .wrapper
       h2.title 產品搜尋結果 ： {{$route.query.t}}
@@ -34,13 +34,13 @@ export default {
     return {
       banner: {
         pc: [this.compileFilePath("product-bn.jpg")],
-        mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=SearchBanner"]
+        mobile: [this.compileFilePath("product-bn.jpg")]
       },
       pageSize: 9
     };
   },
   computed: {
-    ...mapState(["isLoading", "product"]),
+    ...mapState(["isLoading", "product", "screenWidth"]),
     select() {
       return this.$route.query.t;
     }

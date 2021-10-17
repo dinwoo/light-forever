@@ -1,7 +1,7 @@
 <template lang="pug">
 article.series
   section.banner
-    BannerSwiper(:pictureLink="banner")
+    BannerSwiper(:pictureLink="banner" :isSmall="screenWidth < 768")
   section.main
     .wrapper
       .breadcrumb
@@ -45,7 +45,7 @@ export default {
     return {
       banner: {
         pc: [this.compileFilePath("product-bn.jpg")],
-        mobile: ["http://fakeimg.pl/186x163/eee/000000/?text=SeriesBanner"]
+        mobile: [this.compileFilePath("product-bn.jpg")]
       },
       searchTxt: "",
       pageSize: 9,
@@ -53,7 +53,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["isLoading", "product"])
+    ...mapState(["isLoading", "product", "screenWidth"])
   },
   created() {
     this.getProductApi("", 1);

@@ -128,5 +128,5 @@ export default {
     .banner-pic
       padding-bottom: 161.884669%
       &.small
-        padding-bottom: 31.041667%
+        padding-bottom: 55.555556%
 </style>
