@@ -5,7 +5,10 @@ article.home(v-if="!isLoading")
   section.main
     .wrapper
       h2 有燈就會有光
-      p 光，在我們每個家庭無處不在，它照耀了我們的人生。30年前的我們生長在中國某個偏遠的山村，先不說大城市是什麼樣的生活，那個年代我們甚至不知道什麼是燈，有的只有隨時會被風吹滅的油燈。而什麼時候才能有永遠的燈光？長大後我與妹妹一同從事了燈飾這個行業，沒想到一做就快30年了，一直堅信著要把這個光傳送到每個家庭，照耀著每個人，因為有光的地方就會充滿著溫暖！
+      p 
+        | 一燈一飾照亮您秉持專業、品質、信譽、服務
+        br
+        | 為您提供最合適的燈飾。
   section.product
     .wrapper
       .series-box
@@ -111,6 +114,10 @@ article.home
         margin-bottom: 3rem
         text-align: center
       p
+        max-width: 400px
+        margin: auto
+        text-align: center
+        line-height: 1.5
   section.product
     padding: 2rem 0
     text-align: center
