@@ -96,14 +96,18 @@ footer
     .footer-container
       .logo
         width: 50%
-        margin-bottom: 1rem
-        padding-right: 2rem
+        margin-bottom: 0rem
+        padding-right: 0rem
+        vertical-align: middle
+        text-align: center
         img
           width: 80%
       .info-box
         width: 50%
         margin-bottom: 1rem
         padding-right: .5rem
+        &:nth-child(2)
+          vertical-align: middle
         .title
           margin-bottom: 0.6rem
           font-size: 1.2rem
