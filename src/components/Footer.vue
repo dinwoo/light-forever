@@ -10,7 +10,7 @@ footer
       .title 公司地址
       a.txt(href="https://goo.gl/maps/9n5HBQBzC9zqPemu8" target="_blank")  新竹市東區林森路203號11-2
       .title 聯絡資訊
-      a.txt(href="mailto:Light-Forever@Gmail.com") Light-Forever@Gmail.com
+      a.txt(href="mailto:Light.Forever168@gmail.com") Light.Forever168@gmail.com
       .title 聯絡電話
       a.txt(href="tel:0930560600") 0930-560600
     .info-box

@@ -11,7 +11,7 @@ article.contact
         br
         | 如果您想要找到最合宜的燈飾或者其他合作方案，可以透過下方表單欄位的填寫，讓我們知道。或者，寫信給我們 
         br
-        | Light-Forever@Gmail.com（請務必確認您的Email地址是正確的）
+        | Light.Forever168@gmail.com（請務必確認您的Email地址是正確的）
       .contact-form-box
         .row
           label
