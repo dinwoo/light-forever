@@ -14,8 +14,9 @@ footer
       .title 聯絡電話
       a.txt(href="tel:0930560600") 0930-560600
     .info-box
-      a.svg-icon(href="" target="_blank")
-        font-awesome-icon(:icon="['fab','instagram-square']")
+      a.svg-icon(href="mailto:Light.Forever168@gmail.com" target="_blank")
+        font-awesome-icon(:icon="['fas','envelope-square']")
+        //- font-awesome-icon(:icon="['fab','instagram-square']")
       a.svg-icon(href="" target="_blank")
         font-awesome-icon(:icon="['fab','line']")
       a.svg-icon(href="" target="_blank")
@@ -67,6 +68,8 @@ footer
         color: $color-001
         & + .title
           margin-top: 1rem
+      a
+        text-decoration: underline
       .svg-icon
         width: 25%
         max-width: 60px
